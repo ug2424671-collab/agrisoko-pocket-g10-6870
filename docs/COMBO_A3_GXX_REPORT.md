@@ -175,20 +175,20 @@ Full results, the threshold sweep, the confusion matrix, the error table and per
 
 | Metric | Value |
 | --- | --- |
-| Member queries | 12 (name/alias, role and feature for each member) |
+| Member queries | 15 (name or alias, role and feature for each of the five members) |
 | Deliberate no-match queries | 5 |
-| Top-1 member accuracy | 1.000 (12/12) |
+| Top-1 member accuracy | 1.000 (15/15) |
 | No-match rejection accuracy | 1.000 (5/5) |
 | Errors at threshold 0.45 | 0 |
 | Threshold sweep | 0.30–0.45 all clean; degradation begins at 0.50 |
 
 The sweep is the justification for 0.45: it is the highest threshold that keeps every deliberate
 no-match question rejected **and** every correct member question answered. Raising it to 0.50 already
-loses one correct answer.
+loses a correct answer.
 
-> The numbers above are produced by the recorded query suite. Re-run `python scripts/evaluate.py` after
-> the final dataset is in place and paste the regenerated values here and in `RESULTS.md`. If the real
-> records change the figures, report the new figures — never the old ones.
+These figures are produced by `ai-api/evaluation/queries.json` against the five approved records in
+`ai-api/data/members.json`, and are reproducible with `python scripts/evaluate.py`. The dataset
+fingerprint recorded in `ai-api/evaluation/RESULTS.md` identifies the exact dataset behind them.
 
 ## 7. Testing
 
@@ -262,9 +262,8 @@ explain the technical decisions in their part of the system during the defense.
 
 | Member | Registration no. | Contribution area | Signature | Date |
 | --- | --- | --- | --- | --- |
-| *(fill in)* | *(fill in)* | Product and GitHub lead | | |
-| *(fill in)* | *(fill in)* | AI and data engineer | | |
-| *(fill in)* | *(fill in)* | API and integration engineer | | |
-| *(fill in)* | *(fill in)* | Mobile UI and navigation engineer | | |
-| *(fill in)* | *(fill in)* | Offline and quality engineer | | |
-| *(fill in)* | *(fill in)* | Release and evidence engineer | | |
+| Kiir Deng Kur | 2424671 | Product and repository lead | | |
+| Menzi Prince Peter | 2528149 | AI and data engineer | | |
+| Uwase Teta Diolinda | 2526870 | API and integration engineer | | |
+| Shyaka Peter Guy | 252670 | Mobile UI and navigation engineer | | |
+| Umutoni Liliane | 2527968 | Offline, quality and evidence engineer | | |

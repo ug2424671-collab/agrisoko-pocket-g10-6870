@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "threshold": 0.45,
+  "notes": "Approved COMBO_A3_GXX evaluation queries. Three queries per member (name or alias, role, feature) plus five deliberate no-match queries. Every expectedMemberId refers to a real record in ai-api/data/members.json.",
+  "queries": [
+    {
+      "query": "Tell me about Kiir Deng Kur",
+      "expectedMemberId": "kiir-deng-kur",
+      "kind": "name",
+      "note": "Full-name lookup for the product and repository lead."
+    },
+    {
+      "query": "Who is the product and repository lead?",
+      "expectedMemberId": "kiir-deng-kur",
+      "kind": "role",
+      "note": "Exact role wording."
+    },
+    {
+      "query": "Who wrote the project report and README?",
+      "expectedMemberId": "kiir-deng-kur",
+      "kind": "feature",
+      "note": "Contribution wording without naming the role."
+    },
+    {
+      "query": "Oblack",
+      "expectedMemberId": "menzi-prince-peter",
+      "kind": "alias",
+      "note": "Accepted nickname that is not part of the full name."
+    },
+    {
+      "query": "Who is the AI and data engineer?",
+      "expectedMemberId": "menzi-prince-peter",
+      "kind": "role",
+      "note": "Exact role wording."
+    },
+    {
+      "query": "Who built the TF-IDF matching engine?",
+      "expectedMemberId": "menzi-prince-peter",
+      "kind": "feature",
+      "note": "Feature and algorithm wording."
+    },
+    {
+      "query": "Uwase Teta Diolinda",
+      "expectedMemberId": "uwase-teta-diolinda",
+      "kind": "name",
+      "note": "Full-name lookup without a question prefix."
+    },
+    {
+      "query": "Who owns the FastAPI contract?",
+      "expectedMemberId": "uwase-teta-diolinda",
+      "kind": "role",
+      "note": "Paraphrased responsibility using the framework name."
+    },
+    {
+      "query": "Who built the ask endpoint with grounding controls?",
+      "expectedMemberId": "uwase-teta-diolinda",
+      "kind": "feature",
+      "note": "Feature wording with the grounding term."
+    },
+    {
+      "query": "Peter Guy",
+      "expectedMemberId": "shyaka-peter-guy",
+      "kind": "alias",
+      "note": "Two-word alias that must not be confused with the shared first name Peter."
+    },
+    {
+      "query": "Who worked on mobile UI and navigation?",
+      "expectedMemberId": "shyaka-peter-guy",
+      "kind": "role",
+      "note": "Role and skill wording."
+    },
+    {
+      "query": "Who built the profile result screen?",
+      "expectedMemberId": "shyaka-peter-guy",
+      "kind": "feature",
+      "note": "Owned feature wording."
+    },
+    {
+      "query": "Lily",
+      "expectedMemberId": "umutoni-liliane",
+      "kind": "alias",
+      "note": "Short nickname that must survive text normalisation."
+    },
+    {
+      "query": "Which member is the quality engineer?",
+      "expectedMemberId": "umutoni-liliane",
+      "kind": "role",
+      "note": "Role query in a different sentence frame."
+    },
+    {
+      "query": "Who implemented offline lookup with AsyncStorage?",
+      "expectedMemberId": "umutoni-liliane",
+      "kind": "feature",
+      "note": "Feature plus technical tool."
+    },
+    {
+      "query": "Who won the 2026 World Cup?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Unrelated sport question."
+    },
+    {
+      "query": "What is the potato price tomorrow?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Topically adjacent to the scenario but not a team question."
+    },
+    {
+      "query": "Who is the president of Rwanda?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Unrelated public figure."
+    },
+    {
+      "query": "Who built the payment system?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Plausible product question about a feature nobody owns."
+    },
+    {
+      "query": "Help",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Vague one-word query with no member signal."
+    }
+  ]
+}

@@ -17,8 +17,8 @@ repository, the app name and the APK asset accordingly.**
 | Release tag | `v1.0.0` |
 | AI model version | `agrisoko-tfidf-v1` |
 | Confidence threshold | `0.45` |
-| Repository URL | `https://github.com/<org>/agrisoko-pocket-gxx` |
-| v1.0.0 release URL | `https://github.com/<org>/agrisoko-pocket-gxx/releases/tag/v1.0.0` |
+| Repository URL | `https://github.com/ug2424671-collab/agrisoko-pocket-gxx` |
+| v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-gxx/releases/tag/v1.0.0` |
 | Final commit hash | `<paste the commit that matches this ZIP>` |
 | APK path | `build/AgriSokoPocket_GXX.apk` |
 
@@ -36,15 +36,15 @@ questions still answer when the phone has no network.
 
 | # | Name | Registration no. | Primary role | Review responsibility | GitHub |
 | --- | --- | --- | --- | --- | --- |
-| 1 | *(fill in)* | *(fill in)* | Product and GitHub lead | Product scope and contribution evidence | *(username)* |
-| 2 | *(fill in)* | *(fill in)* | AI and data engineer | API tests and no-match safety | *(username)* |
-| 3 | *(fill in)* | *(fill in)* | API and integration engineer | Mobile networking and error handling | *(username)* |
-| 4 | *(fill in)* | *(fill in)* | Mobile UI and navigation engineer | UI and UX evidence | *(username)* |
-| 5 | *(fill in)* | *(fill in)* | Offline and quality engineer | AI query evaluation | *(username)* |
-| 6 | *(fill in)* | *(fill in)* | Release and evidence engineer | Repository traceability | *(username)* |
+| 1 | Kiir Deng Kur | 2424671 | Product and repository lead | Product scope and contribution evidence | [ug2424671-collab](https://github.com/ug2424671-collab) |
+| 2 | Menzi Prince Peter | 2528149 | AI and data engineer | API tests and no-match safety | [ug2528149-cell](https://github.com/ug2528149-cell) |
+| 3 | Uwase Teta Diolinda | 2526870 | API and integration engineer | Mobile networking and error handling | [TetaDiolinda](https://github.com/TetaDiolinda) |
+| 4 | Shyaka Peter Guy | 252670 | Mobile UI and navigation engineer | UI and UX evidence | [peternickson4-max](https://github.com/peternickson4-max) |
+| 5 | Umutoni Liliane | 2527968 | Offline, quality and evidence engineer | AI query evaluation | [lilianeumutoni302](https://github.com/lilianeumutoni302) |
 
-Four-member groups combine roles 4 to 6 as described in the assignment brief. Every member
-implements, tests and can explain a technical contribution.
+Each member implements, tests and can explain a technical contribution. The five roles cover product and
+repository leadership, the AI engine, the API contract, the mobile interface and offline quality
+assurance.
 
 Approved member records live in [`ai-api/data/members.json`](ai-api/data/members.json). Each member
 reviewed and signed their own record; privacy-restricted data is deliberately absent.
@@ -278,11 +278,16 @@ validation before any request, a configurable base URL with an explicit 8000 ms 
 
 | Metric | Value |
 | --- | --- |
-| Member queries | 12 (three per member: name/alias, role, feature) |
+| Member queries | 15 (three per member: name/alias, role, feature) |
 | Deliberate no-match queries | 5 |
-| Top-1 member accuracy | see `ai-api/evaluation/RESULTS.md` |
-| No-match rejection accuracy | see `ai-api/evaluation/RESULTS.md` |
+| Top-1 member accuracy | 1.000 (15/15) |
+| No-match rejection accuracy | 1.000 (5/5) |
+| Errors at the configured threshold | 0 |
 | Threshold | 0.45, justified by the recorded sweep |
+
+These figures are produced by `ai-api/evaluation/queries.json` against the five approved records and
+are reproducible with `python scripts/evaluate.py`. Full detail:
+[`ai-api/evaluation/RESULTS.md`](ai-api/evaluation/RESULTS.md).
 
 ## Repository collaboration
 

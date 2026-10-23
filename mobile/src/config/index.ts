@@ -63,7 +63,7 @@ export const APP_VERSION = APP_VERSION_FALLBACK;
 export const MIN_QUERY_LENGTH = 3;
 export const MAX_QUERY_LENGTH = 300;
 
-export const REPOSITORY_URL = 'https://github.com/REPLACE-ORG/agrisoko-pocket-gxx';
+export const REPOSITORY_URL = 'https://github.com/ug2424671-collab/agrisoko-pocket-gxx';
 export const RELEASE_URL = `${REPOSITORY_URL}/releases/tag/v1.0.0`;
 export const APK_ASSET_NAME = `AgriSokoPocket_${GROUP_CODE}.apk`;
 

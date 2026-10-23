@@ -1,13 +1,36 @@
 [
   {
-    "id": "aline-uwase",
-    "fullName": "Aline Uwase",
+    "id": "kiir-deng-kur",
+    "fullName": "Kiir Deng Kur",
     "aliases": [
-      "Aline",
-      "Uwase",
-      "Ally"
+      "Kiir",
+      "Deng",
+      "Kur",
+      "Kiir Deng"
     ],
-    "githubUsername": "aline-uwase-demo",
+    "githubUsername": "ug2424671-collab",
+    "role": "Product and repository lead",
+    "skills": [
+      "product scope",
+      "GitHub workflow",
+      "code review",
+      "technical writing",
+      "integration testing",
+      "issue triage"
+    ],
+    "targetUser": "potato cooperative members, employers and innovation partners who attend the AgriSoko demonstration in Musanze",
+    "feature": "Product scope, repository workflow and the approved member data contract"
+  },
+  {
+    "id": "menzi-prince-peter",
+    "fullName": "Menzi Prince Peter",
+    "aliases": [
+      "Menzi",
+      "Prince",
+      "Oblack",
+      "Menzi Prince"
+    ],
+    "githubUsername": "ug2528149-cell",
     "role": "AI and data engineer",
     "skills": [
       "Python",
@@ -17,18 +40,41 @@
       "pytest",
       "model evaluation"
     ],
-    "targetUser": "potato cooperative members in Musanze who need trustworthy information about the team",
-    "feature": "Evidence-grounded member matching engine"
+    "targetUser": "visitors who ask a natural-language question and need to know how confident the app is",
+    "feature": "Evidence-grounded member matching engine with a documented confidence threshold"
   },
   {
-    "id": "eric-niyonzima",
-    "fullName": "Eric Niyonzima",
+    "id": "uwase-teta-diolinda",
+    "fullName": "Uwase Teta Diolinda",
     "aliases": [
-      "Eric",
-      "Niyonzima",
-      "Ricky"
+      "Uwase",
+      "Teta",
+      "Diolinda",
+      "Teta Diolinda"
     ],
-    "githubUsername": "eric-niyonzima-demo",
+    "githubUsername": "TetaDiolinda",
+    "role": "API and integration engineer",
+    "skills": [
+      "FastAPI",
+      "Pydantic",
+      "Python",
+      "Uvicorn",
+      "API testing",
+      "JSON schema design"
+    ],
+    "targetUser": "the mobile app and any visitor who needs a reliable answer from the matching engine",
+    "feature": "FastAPI service contract with grounding controls and a degraded-mode signal"
+  },
+  {
+    "id": "shyaka-peter-guy",
+    "fullName": "Shyaka Peter Guy",
+    "aliases": [
+      "Shyaka",
+      "Peter",
+      "Guy",
+      "Peter Guy"
+    ],
+    "githubUsername": "peternickson4-max",
     "role": "Mobile UI and navigation engineer",
     "skills": [
       "React Native",
@@ -36,48 +82,28 @@
       "TypeScript",
       "React Navigation",
       "accessibility",
-      "Flexbox"
+      "UI components"
     ],
-    "targetUser": "cooperative members in Kinigi who check team and price information on Android phones",
+    "targetUser": "cooperative members and visitors who read team profiles on an Android phone",
     "feature": "Profile result screen and typed app navigation"
   },
   {
-    "id": "claudine-mukamana",
-    "fullName": "Claudine Mukamana",
+    "id": "umutoni-liliane",
+    "fullName": "Umutoni Liliane",
     "aliases": [
-      "Claudine",
-      "Mukamana",
-      "Coco"
+      "Umutoni",
+      "Liliane",
+      "Lily"
     ],
-    "githubUsername": "claudine-mukamana-demo",
-    "role": "API and integration engineer",
-    "skills": [
-      "FastAPI",
-      "Pydantic",
-      "Python",
-      "deployment",
-      "logging",
-      "API testing"
-    ],
-    "targetUser": "the mobile app and demonstration visitors who need a reliable online answer",
-    "feature": "FastAPI ask endpoint with grounding controls"
-  },
-  {
-    "id": "samuel-habimana",
-    "fullName": "Samuel Habimana",
-    "aliases": [
-      "Samuel",
-      "Habimana",
-      "Sam"
-    ],
-    "githubUsername": "samuel-habimana-demo",
-    "role": "Offline and quality engineer",
+    "githubUsername": "lilianeumutoni302",
+    "role": "Offline, quality and evidence engineer",
     "skills": [
       "AsyncStorage",
       "NetInfo",
       "device testing",
       "issue reproduction",
-      "quality assurance"
+      "quality assurance",
+      "test documentation"
     ],
     "targetUser": "visitors in rooms with weak or no network coverage in Musanze",
     "feature": "Offline exact-name lookup with cache source labels"
