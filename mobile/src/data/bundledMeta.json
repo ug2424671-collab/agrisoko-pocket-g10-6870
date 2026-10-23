@@ -1,0 +1,8 @@
+{
+  "groupCode": "GXX",
+  "modelVersion": "agrisoko-tfidf-v1",
+  "memberCount": 4,
+  "datasetFingerprint": "edddf9af047f9f3a669712aa6c103f847973a2813c163c32b8df13419268cf2f",
+  "generatedAt": "2026-10-23T00:00:00+00:00",
+  "source": "ai-api/tests/fixtures/members.sample.json (placeholder until the real sync runs)"
+}

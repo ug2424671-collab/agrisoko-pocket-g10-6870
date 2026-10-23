@@ -1,0 +1,546 @@
+{
+  "modelVersion": "agrisoko-tfidf-v1",
+  "generatedAt": "2026-10-23T00:25:53+00:00",
+  "datasetFile": "tests/fixtures/members.sample.json",
+  "datasetFingerprint": "edddf9af047f9f3a669712aa6c103f847973a2813c163c32b8df13419268cf2f",
+  "queriesFile": "tests/fixtures/queries.sample.json",
+  "threshold": 0.45,
+  "queryCount": 17,
+  "memberQueryCount": 12,
+  "noMatchQueryCount": 5,
+  "top1Accuracy": 1.0,
+  "top1RetrievalAccuracy": 1.0,
+  "noMatchRejectionAccuracy": 1.0,
+  "perKind": {
+    "alias": {
+      "count": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "feature": {
+      "count": 4,
+      "correct": 4,
+      "accuracy": 1.0
+    },
+    "name": {
+      "count": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "no_match": {
+      "count": 5,
+      "correct": 5,
+      "accuracy": 1.0
+    },
+    "role": {
+      "count": 4,
+      "correct": 4,
+      "accuracy": 1.0
+    }
+  },
+  "errorCount": 0,
+  "thresholdSweep": [
+    {
+      "threshold": 0.3,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 1.0,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        }
+      },
+      "errorCount": 0
+    },
+    {
+      "threshold": 0.35,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 1.0,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        }
+      },
+      "errorCount": 0
+    },
+    {
+      "threshold": 0.4,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 1.0,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        }
+      },
+      "errorCount": 0
+    },
+    {
+      "threshold": 0.45,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 1.0,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        }
+      },
+      "errorCount": 0
+    },
+    {
+      "threshold": 0.5,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 0.917,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 3,
+          "accuracy": 0.75
+        }
+      },
+      "errorCount": 1
+    },
+    {
+      "threshold": 0.55,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 0.75,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 4,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 1,
+          "accuracy": 0.25
+        }
+      },
+      "errorCount": 3
+    },
+    {
+      "threshold": 0.6,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 0.417,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 1,
+          "accuracy": 0.25
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      },
+      "errorCount": 7
+    },
+    {
+      "threshold": 0.65,
+      "queryCount": 17,
+      "memberQueryCount": 12,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 0.333,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 4,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 4,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      },
+      "errorCount": 8
+    }
+  ],
+  "queries": [
+    {
+      "query": "Tell me about Aline",
+      "kind": "name",
+      "expectedMemberId": "aline-uwase",
+      "predictedMemberId": "aline-uwase",
+      "topCandidateId": "aline-uwase",
+      "confidence": 0.97,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Exact name or alias \"Aline\" matched Aline Uwase."
+    },
+    {
+      "query": "Who is the AI and data engineer?",
+      "kind": "role",
+      "expectedMemberId": "aline-uwase",
+      "predictedMemberId": "aline-uwase",
+      "topCandidateId": "aline-uwase",
+      "confidence": 0.503,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: ai, data, engineer. TF-IDF cosine 0.17 and query-term coverage 1.00 give a confidence of 0.50, above the 0.45 threshold."
+    },
+    {
+      "query": "Who built the TF-IDF matching engine?",
+      "kind": "feature",
+      "expectedMemberId": "aline-uwase",
+      "predictedMemberId": "aline-uwase",
+      "topCandidateId": "aline-uwase",
+      "confidence": 0.563,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: tf, idf, matching, engine. TF-IDF cosine 0.27 and query-term coverage 1.00 give a confidence of 0.56, above the 0.45 threshold."
+    },
+    {
+      "query": "Tell me about Ricky",
+      "kind": "alias",
+      "expectedMemberId": "eric-niyonzima",
+      "predictedMemberId": "eric-niyonzima",
+      "topCandidateId": "eric-niyonzima",
+      "confidence": 0.97,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Exact name or alias \"Ricky\" matched Eric Niyonzima."
+    },
+    {
+      "query": "Who worked on mobile UI and navigation?",
+      "kind": "role",
+      "expectedMemberId": "eric-niyonzima",
+      "predictedMemberId": "eric-niyonzima",
+      "topCandidateId": "eric-niyonzima",
+      "confidence": 0.563,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: mobile, ui, navigation. TF-IDF cosine 0.27 and query-term coverage 1.00 give a confidence of 0.56, above the 0.45 threshold."
+    },
+    {
+      "query": "Who built the profile result screen?",
+      "kind": "feature",
+      "expectedMemberId": "eric-niyonzima",
+      "predictedMemberId": "eric-niyonzima",
+      "topCandidateId": "eric-niyonzima",
+      "confidence": 0.556,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: result, screen. TF-IDF cosine 0.26 and query-term coverage 1.00 give a confidence of 0.56, above the 0.45 threshold."
+    },
+    {
+      "query": "Claudine Mukamana",
+      "kind": "name",
+      "expectedMemberId": "claudine-mukamana",
+      "predictedMemberId": "claudine-mukamana",
+      "topCandidateId": "claudine-mukamana",
+      "confidence": 0.97,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Exact name or alias \"Claudine Mukamana\" matched Claudine Mukamana."
+    },
+    {
+      "query": "Who owns the API contract?",
+      "kind": "role",
+      "expectedMemberId": "claudine-mukamana",
+      "predictedMemberId": "claudine-mukamana",
+      "topCandidateId": "claudine-mukamana",
+      "confidence": 0.55,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: api, contract. TF-IDF cosine 0.25 and query-term coverage 1.00 give a confidence of 0.55, above the 0.45 threshold."
+    },
+    {
+      "query": "Who built the FastAPI ask endpoint?",
+      "kind": "feature",
+      "expectedMemberId": "claudine-mukamana",
+      "predictedMemberId": "claudine-mukamana",
+      "topCandidateId": "claudine-mukamana",
+      "confidence": 0.573,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: fastapi, ask, endpoint. TF-IDF cosine 0.29 and query-term coverage 1.00 give a confidence of 0.57, above the 0.45 threshold."
+    },
+    {
+      "query": "Sam",
+      "kind": "alias",
+      "expectedMemberId": "samuel-habimana",
+      "predictedMemberId": "samuel-habimana",
+      "topCandidateId": "samuel-habimana",
+      "confidence": 0.97,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Exact name or alias \"Sam\" matched Samuel Habimana."
+    },
+    {
+      "query": "Which member is the quality engineer?",
+      "kind": "role",
+      "expectedMemberId": "samuel-habimana",
+      "predictedMemberId": "samuel-habimana",
+      "topCandidateId": "samuel-habimana",
+      "confidence": 0.489,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: quality, engineer. TF-IDF cosine 0.15 and query-term coverage 1.00 give a confidence of 0.49, above the 0.45 threshold."
+    },
+    {
+      "query": "Who implemented offline lookup with AsyncStorage?",
+      "kind": "feature",
+      "expectedMemberId": "samuel-habimana",
+      "predictedMemberId": "samuel-habimana",
+      "topCandidateId": "samuel-habimana",
+      "confidence": 0.601,
+      "returnedMatch": true,
+      "correct": true,
+      "retrievalCorrect": true,
+      "reason": "Matched profile terms: offline, lookup, asyncstorage. TF-IDF cosine 0.34 and query-term coverage 1.00 give a confidence of 0.60, above the 0.45 threshold."
+    },
+    {
+      "query": "Who won the 2026 World Cup?",
+      "kind": "no_match",
+      "expectedMemberId": null,
+      "predictedMemberId": null,
+      "topCandidateId": "aline-uwase",
+      "confidence": 0.036,
+      "returnedMatch": false,
+      "correct": true,
+      "retrievalCorrect": false,
+      "reason": "No profile reached the 0.45 confidence threshold. The closest score was 0.04. Try a name, nickname, role or feature from the directory."
+    },
+    {
+      "query": "What is the potato price tomorrow?",
+      "kind": "no_match",
+      "expectedMemberId": null,
+      "predictedMemberId": null,
+      "topCandidateId": "aline-uwase",
+      "confidence": 0.177,
+      "returnedMatch": false,
+      "correct": true,
+      "retrievalCorrect": false,
+      "reason": "No profile reached the 0.45 confidence threshold. The closest score was 0.18. Try a name, nickname, role or feature from the directory."
+    },
+    {
+      "query": "Who is the president of Rwanda?",
+      "kind": "no_match",
+      "expectedMemberId": null,
+      "predictedMemberId": null,
+      "topCandidateId": "aline-uwase",
+      "confidence": 0.044,
+      "returnedMatch": false,
+      "correct": true,
+      "retrievalCorrect": false,
+      "reason": "No profile reached the 0.45 confidence threshold. The closest score was 0.04. Try a name, nickname, role or feature from the directory."
+    },
+    {
+      "query": "Who built the payment system?",
+      "kind": "no_match",
+      "expectedMemberId": null,
+      "predictedMemberId": null,
+      "topCandidateId": "aline-uwase",
+      "confidence": 0.054,
+      "returnedMatch": false,
+      "correct": true,
+      "retrievalCorrect": false,
+      "reason": "No profile reached the 0.45 confidence threshold. The closest score was 0.05. Try a name, nickname, role or feature from the directory."
+    },
+    {
+      "query": "Help",
+      "kind": "no_match",
+      "expectedMemberId": null,
+      "predictedMemberId": null,
+      "topCandidateId": "claudine-mukamana",
+      "confidence": 0.009,
+      "returnedMatch": false,
+      "correct": true,
+      "retrievalCorrect": false,
+      "reason": "No profile reached the 0.45 confidence threshold. The closest score was 0.01. Try a name, nickname, role or feature from the directory."
+    }
+  ]
+}

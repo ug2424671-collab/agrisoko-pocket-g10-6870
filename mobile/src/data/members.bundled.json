@@ -1,0 +1,85 @@
+[
+  {
+    "id": "aline-uwase",
+    "fullName": "Aline Uwase",
+    "aliases": [
+      "Aline",
+      "Uwase",
+      "Ally"
+    ],
+    "githubUsername": "aline-uwase-demo",
+    "role": "AI and data engineer",
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "TF-IDF",
+      "pandas",
+      "pytest",
+      "model evaluation"
+    ],
+    "targetUser": "potato cooperative members in Musanze who need trustworthy information about the team",
+    "feature": "Evidence-grounded member matching engine"
+  },
+  {
+    "id": "eric-niyonzima",
+    "fullName": "Eric Niyonzima",
+    "aliases": [
+      "Eric",
+      "Niyonzima",
+      "Ricky"
+    ],
+    "githubUsername": "eric-niyonzima-demo",
+    "role": "Mobile UI and navigation engineer",
+    "skills": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "React Navigation",
+      "accessibility",
+      "Flexbox"
+    ],
+    "targetUser": "cooperative members in Kinigi who check team and price information on Android phones",
+    "feature": "Profile result screen and typed app navigation"
+  },
+  {
+    "id": "claudine-mukamana",
+    "fullName": "Claudine Mukamana",
+    "aliases": [
+      "Claudine",
+      "Mukamana",
+      "Coco"
+    ],
+    "githubUsername": "claudine-mukamana-demo",
+    "role": "API and integration engineer",
+    "skills": [
+      "FastAPI",
+      "Pydantic",
+      "Python",
+      "deployment",
+      "logging",
+      "API testing"
+    ],
+    "targetUser": "the mobile app and demonstration visitors who need a reliable online answer",
+    "feature": "FastAPI ask endpoint with grounding controls"
+  },
+  {
+    "id": "samuel-habimana",
+    "fullName": "Samuel Habimana",
+    "aliases": [
+      "Samuel",
+      "Habimana",
+      "Sam"
+    ],
+    "githubUsername": "samuel-habimana-demo",
+    "role": "Offline and quality engineer",
+    "skills": [
+      "AsyncStorage",
+      "NetInfo",
+      "device testing",
+      "issue reproduction",
+      "quality assurance"
+    ],
+    "targetUser": "visitors in rooms with weak or no network coverage in Musanze",
+    "feature": "Offline exact-name lookup with cache source labels"
+  }
+]

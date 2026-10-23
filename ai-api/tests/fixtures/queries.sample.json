@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "threshold": 0.45,
+  "notes": "Synthetic fixture queries used by pytest and the engine demo. Replace with the approved COMBO_A3_GXX queries before submitting. Three queries per member and five deliberate no-match queries.",
+  "queries": [
+    {
+      "query": "Tell me about Aline",
+      "expectedMemberId": "aline-uwase",
+      "kind": "name",
+      "note": "Exact first-name lookup."
+    },
+    {
+      "query": "Who is the AI and data engineer?",
+      "expectedMemberId": "aline-uwase",
+      "kind": "role",
+      "note": "Exact role wording."
+    },
+    {
+      "query": "Who built the TF-IDF matching engine?",
+      "expectedMemberId": "aline-uwase",
+      "kind": "feature",
+      "note": "Contribution wording."
+    },
+    {
+      "query": "Tell me about Ricky",
+      "expectedMemberId": "eric-niyonzima",
+      "kind": "alias",
+      "note": "Accepted nickname, not part of the full name."
+    },
+    {
+      "query": "Who worked on mobile UI and navigation?",
+      "expectedMemberId": "eric-niyonzima",
+      "kind": "role",
+      "note": "Role and skill wording."
+    },
+    {
+      "query": "Who built the profile result screen?",
+      "expectedMemberId": "eric-niyonzima",
+      "kind": "feature",
+      "note": "Owned feature wording."
+    },
+    {
+      "query": "Claudine Mukamana",
+      "expectedMemberId": "claudine-mukamana",
+      "kind": "name",
+      "note": "Full-name lookup without a question prefix."
+    },
+    {
+      "query": "Who owns the API contract?",
+      "expectedMemberId": "claudine-mukamana",
+      "kind": "role",
+      "note": "Paraphrased responsibility."
+    },
+    {
+      "query": "Who built the FastAPI ask endpoint?",
+      "expectedMemberId": "claudine-mukamana",
+      "kind": "feature",
+      "note": "Feature and framework wording."
+    },
+    {
+      "query": "Sam",
+      "expectedMemberId": "samuel-habimana",
+      "kind": "alias",
+      "note": "Short nickname that must survive text normalisation."
+    },
+    {
+      "query": "Which member is the quality engineer?",
+      "expectedMemberId": "samuel-habimana",
+      "kind": "role",
+      "note": "Role query with a different sentence frame."
+    },
+    {
+      "query": "Who implemented offline lookup with AsyncStorage?",
+      "expectedMemberId": "samuel-habimana",
+      "kind": "feature",
+      "note": "Feature plus technical tool."
+    },
+    {
+      "query": "Who won the 2026 World Cup?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Unrelated sport question."
+    },
+    {
+      "query": "What is the potato price tomorrow?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Topically adjacent to the scenario but not a team question."
+    },
+    {
+      "query": "Who is the president of Rwanda?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Unrelated public figure."
+    },
+    {
+      "query": "Who built the payment system?",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Plausible product question about a feature nobody owns."
+    },
+    {
+      "query": "Help",
+      "expectedMemberId": null,
+      "kind": "no_match",
+      "note": "Vague one-word query with no member signal."
+    }
+  ]
+}

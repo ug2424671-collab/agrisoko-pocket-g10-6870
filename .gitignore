@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build output and caches
+build/
+dist/
+
+# Generated AI model artifacts (rebuild with: python scripts/build_index.py)
+ai-api/artifacts/
+.expo/
+.expo-shared/
+*.tsbuildinfo
+
+# Secrets and local configuration
+.env
+.env.local
+.env.*.local
+*.keystore
+*.jks
+credentials.json
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
