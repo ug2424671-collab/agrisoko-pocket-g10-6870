@@ -19,7 +19,7 @@ See [Fill-in checklist](#fill-in-checklist) for the remaining steps.
 | Confidence threshold | `0.45` |
 | Repository URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870` |
 | v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870/releases/tag/v1.0.0` |
-| Final commit hash | `df4d85c` (the commit the `v1.0.0` tag and release point at) |
+| Final commit hash | `7cc5cce` (the commit the `v1.0.0` tag and release point at) |
 | APK path | `build/AgriSokoPocket_G-10-6870.apk` |
 | APK SHA-256 | `149bebacda24df7c8dbcb3e2b704cffa162287c489989875674024579ec773db` |
 
