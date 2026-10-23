@@ -114,17 +114,64 @@ At least two Android devices or two materially different Android configurations.
 | Large text | Android font size 130 % | no clipped text, no overlap | |
 | Failed link | Evidence URL with no handler | visible "could not open" message | |
 
-## 5. Reproducible issues found and fixed
+## 5. Release APK build
+
+Built on this machine with the Android SDK, JDK 17 and Gradle, without an Expo/EAS account, using
+`build/build_apk_local.sh`. The build was repeated; every value below is copied from the final run.
+
+| Check | Command | Result |
+| --- | --- | --- |
+| Native project generated | `npx expo prebuild --platform android` | `android/` created, package `rw.ines.agrisoko.pocket.g106870` |
+| Release build | `./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a` | `BUILD SUCCESSFUL in 16m 56s`, 380 actionable tasks (209 executed, 171 up-to-date) |
+| Artifact name | `build/build_apk_local.sh` | `build/AgriSokoPocket_G-10-6870.apk` |
+| Size | `ls -lh` | 26 MB |
+| Package | `aapt2 dump badging` | `rw.ines.agrisoko.pocket.g106870`, versionCode 1, versionName 1.0.0 |
+| Launcher label | `aapt2 dump badging` | `AgriSoko Pocket G-10-6870` |
+| SDK levels | `aapt2 dump badging` | `sdkVersion 24`, `targetSdkVersion 35`, compileSdk 35 |
+| ABI packaged | `aapt2 dump badging` | `arm64-v8a` (single ABI for the demo device) |
+| Zip alignment | `zipalign -c -v 4` | aligned |
+| Signature | `apksigner verify --print-certs` | valid; `CN=AgriSoko Pocket G-10-6870, OU=INES, O=AgriSoko Pocket, L=Kigali, C=RW` |
+| SHA-256 | `sha256sum` | `c9cb2ce87234b5a825696ff32da69b136bc4f51bf220968d16f4143359436fbb` |
+
+### What is inside the APK
+
+| Check | Method | Result |
+| --- | --- | --- |
+| Hermes bundle present | `unzip -l` | `assets/index.android.bundle`, 1.8 MB |
+| Hermes runtime | `unzip -l` | `lib/arm64-v8a/libhermes.so` |
+| Group code compiled in | `grep -a` on the bundle | `G-10-6870` found |
+| Member data compiled in | `grep -a` on the bundle | `Kiir Deng Kur` found |
+| Source labels compiled in | `grep -a` on the bundle | `Offline match`, `Cached result` found |
+| Threshold compiled in | `grep -a` on the bundle | `0.45` found |
+| Repository URL compiled in | `grep -a` on the bundle | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870` found |
+
+### Build defects found and fixed
+
+| Defect | How it showed up | Fix |
+| --- | --- | --- |
+| Missing `babel-preset-expo` | Metro aborted immediately: `Cannot find module 'babel-preset-expo'` | Added the dependency (`260cb3b`) |
+| Gradle daemon killed twice during compilation | 6.6 GB machine; all four ABIs plus parallel workers exhausted RAM and swap | Single ABI, `org.gradle.parallel=false`, `workers.max=1`, `-Xmx2048m`, in-process Kotlin compiler |
+
+### Still not done
+
+The APK has **not** been installed on a physical device, so the device matrix and the state-coverage
+table below are still empty. That work needs real hardware and a real tester; it has not been simulated.
+
+## 6. Reproducible issues found and fixed
 
 At least two, each linked to a GitHub issue and a fixing commit. Never invent a defect.
 
 | # | Issue | Reported by | Steps to reproduce | Observed | Expected | Fix commit | Verified by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Ambiguous shared alias | Menzi Prince Peter | Ask `Peter` while both records list "Peter" as an alias | The retrieval step had two competing exact identities | One member, or a safe no-match | `<commit>` | Dataset validation reports no shared alias |
-| 2 | Offline check tested a hardcoded fixture | Umutoni Liliane | Run `npm run test:offline` after changing the dataset | The check passed even though it never read `members.bundled.json` | The check must fail on a stale bundle | `<commit>` | Now runs 23 checks against the real bundle |
-| 3 | | | | | | | |
+| 1 | Ambiguous shared alias | Menzi Prince Peter | Ask `Peter` while both records list "Peter" as an alias | The retrieval step had two competing exact identities | One member, or a safe no-match | `e1d43e0` | The bare `Peter` alias was removed; `Peter` now resolves to `shyaka-peter-guy` alone, and `validate_data.py` reports no shared alias |
+| 2 | Offline check tested a hardcoded fixture | Umutoni Liliane | Run `npm run test:offline` after changing the dataset | The check passed even though it never read `members.bundled.json` | The check must fail on a stale bundle | `e1d43e0` | Now runs 23 checks against the real bundle |
+| 3 | The app could not be bundled at all | Shyaka Peter Guy | Run `npx expo export --platform android` on a clean install | Metro failed with `Cannot find module 'babel-preset-expo'` | A production Android bundle is produced | `260cb3b` | `npx expo export` now emits a 2.75 MB Hermes bundle, and the release APK builds |
 
-## 6. Unresolved issues
+Note on issue 3: `npm run check` had never caught this because it only runs Node scripts and never
+invokes Metro. The defect was found by running a real production bundle, not by a unit test, which is
+why the release build is now part of the recorded verification rather than an afterthought.
+
+## 7. Unresolved issues
 
 | Issue | Why it remains | User-visible limitation documented in the app |
 | --- | --- | --- |
@@ -133,7 +180,7 @@ At least two, each linked to a GitHub issue and a fixing commit. Never invent a 
 | No on-device retrieval offline | The index is not shipped in the APK | The About screen states offline mode supports exact name, nickname, role and feature lookup only |
 | `members.json` is read at start-up | The service loads the dataset once | The README records that editing the dataset requires a restart or redeploy |
 
-## 7. Environment
+## 8. Environment
 
 | Tool | Version |
 | --- | --- |
@@ -145,4 +192,8 @@ At least two, each linked to a GitHub issue and a fixing commit. Never invent a 
 | Pydantic | 2.14.1 |
 | Uvicorn | 0.54.0 |
 | Expo SDK | 54.0.38 |
-| Android device(s) | *(fill in after testing the APK)* |
+| JDK | 17.0.20.1 (Ubuntu 17.0.20.1+1-1-26.04) |
+| Gradle | 8.14.3 (wrapper) |
+| Android SDK | build-tools 36.0.0, platform 35, NDK 27.1.12297006 |
+| Android device(s) | **none available on the build machine** — see section 4 |
+| Host | 6.6 GiB RAM, 4 GiB swap, Linux x86_64 |

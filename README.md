@@ -158,9 +158,12 @@ Leaving the value empty is a valid configuration: the app then runs in offline-o
 on the Home and About screens. Timeout, group code and threshold are configurable the same way:
 `EXPO_PUBLIC_REQUEST_TIMEOUT_MS`, `EXPO_PUBLIC_GROUP_CODE`, `EXPO_PUBLIC_CONFIDENCE_THRESHOLD`.
 
-### 4. Android APK (EAS)
+### 4. Android APK
 
-The build is scripted so the artefact always lands at the right path with the right name:
+Two build paths exist. Both read the group code from `mobile/app.json`, so the artefact name follows
+`scripts/apply_group_code.py` automatically.
+
+**Cloud build with EAS** (needs an Expo account):
 
 ```bash
 cd mobile
@@ -168,26 +171,25 @@ npx eas-cli login                    # once per machine
 bash ../build/build_apk.sh           # runs eas init, builds profile 'preview', downloads to build/
 ```
 
-Equivalent manual steps:
+**Local build with the Android SDK** (no Expo account, nothing uploaded anywhere):
 
 ```bash
-cd mobile
-npx eas-cli login
-npx eas-cli init                    # writes the real projectId into app.json
-npx eas-cli build --platform android --profile preview
+export ANDROID_HOME="$HOME/android-sdk"
+bash build/build_apk_local.sh
 ```
 
-Download the resulting APK and place it at `build/AgriSokoPocket_G-10-6870.apk`. Attach the same file to
-the GitHub `v1.0.0` release.
+This is the path that produced the submitted file. It runs `expo prebuild`, compiles `arm64-v8a` with
+Gradle, copies the result to `build/AgriSokoPocket_G-10-6870.apk`, and re-signs it with the private
+keystore at `~/.agrisoko-keys/agrisoko-release.jks` when `AGRISOKO_KEY_PASS` is set. The keystore is
+deliberately outside the repository. Without it the APK keeps Gradle's debug signature, which still
+installs over `adb` but is not a release identity.
 
-Local alternative with an Android SDK present:
+Measured on this machine: 16 min 56 s, 26 MB, package `rw.ines.agrisoko.pocket.g106870`, versionName
+`1.0.0`, `minSdk 24`, `targetSdk 35`, SHA-256
+`c9cb2ce87234b5a825696ff32da69b136bc4f51bf220968d16f4143359436fbb`. The full record is in
+`evidence/TEST_LOG.md` section 5.
 
-```bash
-bash build/build_apk.sh --local
-```
-
-The script reads the group code from `mobile/app.json`, so renaming the APK happens automatically
-after `scripts/apply_group_code.py` has been run.
+Attach the same file to the GitHub `v1.0.0` release.
 
 ### 5. PDF evidence
 
