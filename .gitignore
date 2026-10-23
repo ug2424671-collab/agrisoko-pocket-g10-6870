@@ -13,7 +13,9 @@ __pycache__/
 .ruff_cache/
 
 # Build output and caches
-build/
+build/*
+!build/build_apk.sh
+!build/.gitkeep
 dist/
 
 # Generated AI model artifacts (rebuild with: python scripts/build_index.py)

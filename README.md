@@ -160,6 +160,16 @@ on the Home and About screens. Timeout, group code and threshold are configurabl
 
 ### 4. Android APK (EAS)
 
+The build is scripted so the artefact always lands at the right path with the right name:
+
+```bash
+cd mobile
+npx eas-cli login                    # once per machine
+bash ../build/build_apk.sh           # runs eas init, builds profile 'preview', downloads to build/
+```
+
+Equivalent manual steps:
+
 ```bash
 cd mobile
 npx eas-cli login
@@ -167,16 +177,31 @@ npx eas-cli init                    # writes the real projectId into app.json
 npx eas-cli build --platform android --profile preview
 ```
 
-Download the resulting `AgriSokoPocket_GXX.apk` and place it in `build/`. Attach the same file to the
-GitHub `v1.0.0` release.
+Download the resulting APK and place it at `build/AgriSokoPocket_GXX.apk`. Attach the same file to
+the GitHub `v1.0.0` release.
 
 Local alternative with an Android SDK present:
 
 ```bash
-npx eas-cli build --platform android --profile preview --local
+bash build/build_apk.sh --local
 ```
 
-### 5. Checks
+The script reads the group code from `mobile/app.json`, so renaming the APK happens automatically
+after `scripts/apply_group_code.py` has been run.
+
+### 5. PDF evidence
+
+The report and the evidence documents are generated from their Markdown sources:
+
+```bash
+bash docs/make_pdfs.sh              # writes build/pdf/*.pdf
+```
+
+The script uses `pandoc` when it is installed and falls back to the bundled
+`docs/md_to_html.py` converter, then renders with headless LibreOffice. Copy the assessed PDFs to
+the locations listed under [Evidence files](#evidence-files).
+
+### 6. Checks
 
 ```bash
 cd mobile
@@ -300,12 +325,34 @@ demonstration timestamp: [`evidence/CONTRIBUTIONS.pdf`](evidence/README.md).
 
 ## Fill-in checklist
 
-1. Replace `GXX` everywhere: `mobile/app.json` (`name`, `slug`, `package`, `extra.groupCode`,
-   `extra.eas.projectId`), `ai-api/app/config.py` (`GROUP_CODE`), `mobile/src/config/index.ts`
-   (`REPOSITORY_URL`), `README.md`, `docs/`, `evidence/`.
-2. Rename the repository to `agrisoko-pocket-gxx` and the release asset to `AgriSokoPocket_GXX.apk`.
-3. Replace the placeholder JSON in `ai-api/data/members.json` with the six signed member records.
-4. Run `python scripts/validate_data.py`, `build_index.py`, `evaluate.py`, `sync_mobile_data.py`.
-5. Re-run `npm run check` inside `mobile/`.
-6. Build the APK, install it on two Android devices, record the demo, complete every evidence file.
-7. Tag `v1.0.0`, publish the release with the APK, and paste the final commit hash in the table above.
+### One-pass group-code substitution
+
+Run this **first**, before any other step:
+
+```bash
+python3 scripts/apply_group_code.py --group-code G14 \
+  --repo-url https://github.com/<your-org>/agrisoko-pocket-g14
+```
+
+It replaces the placeholder `GXX` in the app name, the Android package, the API configuration, the
+documentation and the evidence files, renames files such as `docs/COMBO_A3_GXX_REPORT.md`, and is
+safe to run twice (the second run reports no changes). Use `--dry-run` to preview.
+
+Then:
+
+1. Confirm `mobile/app.json` (`name`, `slug`, `package`, `extra.groupCode`) and
+   `ai-api/app/config.py` (`GROUP_CODE`) show the real code.
+2. Replace the placeholder JSON in `ai-api/data/members.json` with the signed member records, using
+   `ai-api/tests/fixtures/members.sample.json` as the schema template.
+3. Run `python scripts/validate_data.py`, `build_index.py`, `evaluate.py`, `sync_mobile_data.py`
+   inside `ai-api/` (use the `ai-api/.venv` interpreter).
+4. Re-run `npm run check` inside `mobile/`.
+5. Build the APK with `bash build/build_apk.sh`, install it on two Android devices, record the demo,
+   and complete every evidence file.
+6. Regenerate the PDFs with `bash docs/make_pdfs.sh`.
+7. Create the GitHub issues, branches, pull requests and reviews, tag `v1.0.0`, publish the release
+   with the APK, and paste the final commit hash in the table at the top of this README.
+
+The EAS `projectId` and the repository URL are the only remaining placeholders after step 1;
+`scripts/apply_group_code.py` fills the repository URL and `bash build/build_apk.sh` fills the
+`projectId` via `eas init`.
