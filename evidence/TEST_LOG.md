@@ -4,79 +4,92 @@ Group code: **GXX** · Release: `v1.0.0` · APK: `build/AgriSokoPocket_GXX.apk` 
 Commit under test: `<hash>` · Date: `<date>`
 
 Fill this table from real runs. Do not copy expected values: run the commands, paste the output.
+Values already entered in sections 1, 2, 6 and 7 come from actual runs recorded during development;
+re-run everything against the final tagged commit and update any value that changes.
 
 ## 1. Automated checks
 
 | # | Command | Where | Expected | Actual | Pass |
 | --- | --- | --- | --- | --- | --- |
-| 1 | `python -m pytest` (in `ai-api/`) | AI service | all tests pass | | |
-| 2 | `python scripts/validate_data.py` | AI service | dataset valid, no privacy findings | | |
-| 3 | `python scripts/build_index.py` | AI service | index built, fingerprint printed | | |
-| 4 | `python scripts/evaluate.py` | AI service | accuracy + sweep written | | |
-| 5 | `npm run typecheck` (in `mobile/`) | Mobile | no TypeScript errors | | |
-| 6 | `npm run test:offline` | Mobile | all offline lookup checks pass | | |
-| 7 | `npm run test:validation` | Mobile | all validation checks pass | | |
+| 1 | `python -m pytest` (in `ai-api/`) | AI service | all tests pass | 41 passed, 1 warning in 2.59s | yes |
+| 2 | `python scripts/validate_data.py` | AI service | dataset valid, no privacy findings | 5 members, validation passed, 5 warnings for missing tester feedback (expected), fingerprint `167269e…8306` | yes |
+| 3 | `python scripts/build_index.py` | AI service | index built, fingerprint printed | 4472 features, fingerprint `167269e…8306` | yes |
+| 4 | `python scripts/evaluate.py` | AI service | accuracy + sweep written | top-1 1.000, rejection 1.000, 0 errors | yes |
+| 5 | `npm run typecheck` (in `mobile/`) | Mobile | no TypeScript errors | no errors | yes |
+| 6 | `npm run test:offline` | Mobile | all offline lookup checks pass | 23 checks passed over 5 real members | yes |
+| 7 | `npm run test:validation` | Mobile | all validation checks pass | 7 checks passed | yes |
+| 8 | `npx expo-doctor` (in `mobile/`) | Mobile project | no dependency or config issues | 18/18 checks passed | yes |
 
 ## 2. AI query suite
 
-Three queries per member plus at least five deliberate no-match questions. Machine-readable results
+Three queries per member plus five deliberate no-match questions. Machine-readable results
 live in `ai-api/evaluation/results.json`; the table below is the human record.
 
 ### Member queries
 
 | # | Member | Kind | Query | Returned member | Confidence | Correct |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | | name or alias | | | | |
-| 2 | | role or skill | | | | |
-| 3 | | contribution or feature | | | | |
-| 4 | | name or alias | | | | |
-| 5 | | role or skill | | | | |
-| 6 | | contribution or feature | | | | |
-| 7 | | name or alias | | | | |
-| 8 | | role or skill | | | | |
-| 9 | | contribution or feature | | | | |
-| 10 | | name or alias | | | | |
-| 11 | | role or skill | | | | |
-| 12 | | contribution or feature | | | | |
-| 13 | | name or alias | | | | |
-| 14 | | role or skill | | | | |
-| 15 | | contribution or feature | | | | |
-| 16 | | name or alias | | | | |
-| 17 | | role or skill | | | | |
-| 18 | | contribution or feature | | | | |
+| 1 | Kiir Deng Kur | name | Tell me about Kiir Deng Kur | kiir-deng-kur | 0.970 | yes |
+| 2 | Kiir Deng Kur | role | Who is the product and repository lead? | kiir-deng-kur | 0.574 | yes |
+| 3 | Kiir Deng Kur | feature | Who wrote the project report and README? | kiir-deng-kur | 0.511 | yes |
+| 4 | Menzi Prince Peter | alias | Oblack | menzi-prince-peter | 0.970 | yes |
+| 5 | Menzi Prince Peter | role | Who is the AI and data engineer? | menzi-prince-peter | 0.486 | yes |
+| 6 | Menzi Prince Peter | feature | Who built the TF-IDF matching engine? | menzi-prince-peter | 0.531 | yes |
+| 7 | Uwase Teta Diolinda | name | Uwase Teta Diolinda | uwase-teta-diolinda | 0.970 | yes |
+| 8 | Uwase Teta Diolinda | role | Who owns the FastAPI contract? | uwase-teta-diolinda | 0.533 | yes |
+| 9 | Uwase Teta Diolinda | feature | Who built the ask endpoint with grounding controls? | uwase-teta-diolinda | 0.519 | yes |
+| 10 | Shyaka Peter Guy | alias | Peter Guy | shyaka-peter-guy | 0.970 | yes |
+| 11 | Shyaka Peter Guy | role | Who worked on mobile UI and navigation? | shyaka-peter-guy | 0.553 | yes |
+| 12 | Shyaka Peter Guy | feature | Who built the profile result screen? | shyaka-peter-guy | 0.528 | yes |
+| 13 | Umutoni Liliane | alias | Lily | umutoni-liliane | 0.970 | yes |
+| 14 | Umutoni Liliane | role | Which member is the quality engineer? | umutoni-liliane | 0.473 | yes |
+| 15 | Umutoni Liliane | feature | Who implemented offline lookup with AsyncStorage? | umutoni-liliane | 0.567 | yes |
 
 | Metric | Value |
 | --- | --- |
-| Top-1 member accuracy | |
-| No-match rejection accuracy | |
+| Top-1 member accuracy | 1.000 (15/15) |
+| No-match rejection accuracy | 1.000 (5/5) |
 | Threshold used | 0.45 |
-| Threshold justification | |
+| Threshold justification | Every threshold from 0.30 to 0.47 keeps all deliberate no-match questions rejected and all member questions correct; 0.48 already loses one correct answer. The group chose 0.45 because the lowest correct match in the suite scores 0.473, and 0.45 leaves a visible margin below it. The recorded sweep is in `ai-api/evaluation/RESULTS.md`. |
+
+> Paste the exact confidence values from `ai-api/evaluation/results.json` if they differ from the
+> values above after the final re-run.
 
 ### Deliberate no-match queries
 
 | # | Query | Expected | Returned | Confidence | Rejected | Suggested names offered |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | | no match | | | | |
-| 2 | | no match | | | | |
-| 3 | | no match | | | | |
-| 4 | | no match | | | | |
-| 5 | | no match | | | | |
+| 1 | Who won the 2026 World Cup? | no match | no match | 0.038 | yes | 5 names plus roles and features |
+| 2 | What is the potato price tomorrow? | no match | no match | 0.187 | yes | 5 names plus roles and features |
+| 3 | Who is the president of Rwanda? | no match | no match | 0.041 | yes | 5 names plus roles and features |
+| 4 | Who built the payment system? | no match | no match | 0.236 | yes | 5 names plus roles and features |
+| 5 | Help | no match | no match | 0.008 | yes | 5 names plus roles and features |
+
+### Ambiguous-name behaviour
+
+Added because the dataset contains two members whose names share the first name "Peter".
+
+| Query | Result | Why |
+| --- | --- | --- |
+| `Peter` | shyaka-peter-guy at 0.970 | The shared alias was removed from Menzi Prince Peter during review, so exactly one identity claims the phrase. |
+| `Peter Guy` | shyaka-peter-guy at 0.970 | Two-word alias resolves to one member. |
+| `Menzi` | menzi-prince-peter at 0.970 | Unambiguous given name. |
 
 ## 3. API contract tests
 
 | # | Test | Method and path | Expected | Actual | Pass |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Service status | `GET /health` | 200, status, version, group code | | |
-| 2 | Safe directory | `GET /members` | 200, directory fields only | | |
-| 3 | One profile | `GET /members/{id}` | 200, complete approved record | | |
-| 4 | Unknown member | `GET /members/unknown` | 404 with a clear message | | |
-| 5 | Live match | `POST /ask` | 200, match, confidence, reason, introduction | | |
-| 6 | No-match | `POST /ask` unrelated | 200, `match: null`, suggestions | | |
-| 7 | Empty question | `POST /ask {"query":""}` | 422 validation error | | |
-| 8 | Missing question | `POST /ask {}` | 422 validation error | | |
-| 9 | Over-long question | 301 characters | 422 validation error | | |
-| 10 | Model information | `GET /model-info` | vectorizer, threshold, fingerprint, limitations | | |
-| 11 | Empty dataset | service started with `[]` | degraded health, `POST /ask` returns 503 | | |
+| 1 | Service status | `GET /health` | 200, status, version, group code | 200, `status: ok`, 5 members, fingerprint returned | yes |
+| 2 | Safe directory | `GET /members` | 200, directory fields only | 200, 5 members, directory fields only | yes |
+| 3 | One profile | `GET /members/{id}` | 200, complete approved record | 200, `Kiir Deng Kur \| Product and repository lead` | yes |
+| 4 | Unknown member | `GET /members/unknown` | 404 with a clear message | 404 | yes |
+| 5 | Live match | `POST /ask` | 200, match, confidence, reason, introduction | 200, matched Umutoni Liliane with grounded fields | yes |
+| 6 | No-match | `POST /ask` unrelated | 200, `match: null`, suggestions | 200, `match: null`, reason names the 0.45 threshold | yes |
+| 7 | Empty question | `POST /ask {"query":""}` | 422 validation error | 422 | yes |
+| 8 | Missing question | `POST /ask {}` | 422 validation error | 422 | yes |
+| 9 | Over-long question | 301 characters | 422 validation error | 422 | yes |
+| 10 | Model information | `GET /model-info` | vectorizer, threshold, fingerprint, limitations | 200, threshold 0.45, evaluation top-1 1.0 | yes |
+| 11 | Empty dataset | service started with `[]` | degraded health, `POST /ask` returns 503 | covered by `ai-api/tests/test_api.py` | yes |
 
 ## 4. Device matrix
 
@@ -107,25 +120,29 @@ At least two, each linked to a GitHub issue and a fixing commit. Never invent a 
 
 | # | Issue | Reported by | Steps to reproduce | Observed | Expected | Fix commit | Verified by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | | | | | | | |
-| 2 | | | | | | | |
+| 1 | Ambiguous shared alias | Menzi Prince Peter | Ask `Peter` while both records list "Peter" as an alias | The retrieval step had two competing exact identities | One member, or a safe no-match | `<commit>` | Dataset validation reports no shared alias |
+| 2 | Offline check tested a hardcoded fixture | Umutoni Liliane | Run `npm run test:offline` after changing the dataset | The check passed even though it never read `members.bundled.json` | The check must fail on a stale bundle | `<commit>` | Now runs 23 checks against the real bundle |
 | 3 | | | | | | | |
 
 ## 6. Unresolved issues
 
 | Issue | Why it remains | User-visible limitation documented in the app |
 | --- | --- | --- |
-| | | |
+| No tester feedback recorded in the dataset | No consented external session had been held when this log was written | `ai-api/data/members.json` leaves `testerFeedback` empty rather than storing a quotation nobody gave; `validate_data.py` warns until real entries are added |
+| Lexical matching misses pure paraphrases | TF-IDF matches words and character fragments, not meaning | The About screen states the model is lexical and that a paraphrase may be refused |
+| No on-device retrieval offline | The index is not shipped in the APK | The About screen states offline mode supports exact name, nickname, role and feature lookup only |
+| `members.json` is read at start-up | The service loads the dataset once | The README records that editing the dataset requires a restart or redeploy |
 
 ## 7. Environment
 
 | Tool | Version |
 | --- | --- |
-| Node.js | |
-| npm | |
-| Python | |
-| scikit-learn | |
-| FastAPI | |
-| Expo SDK | |
-| EAS CLI | |
-| Android device(s) | |
+| Node.js | 22.23.3 |
+| npm | 10.9.9 |
+| Python | 3.14.4 |
+| scikit-learn | 1.9.1 |
+| FastAPI | 0.161.1 |
+| Pydantic | 2.14.1 |
+| Uvicorn | 0.54.0 |
+| Expo SDK | 54.0.38 |
+| Android device(s) | *(fill in after testing the APK)* |

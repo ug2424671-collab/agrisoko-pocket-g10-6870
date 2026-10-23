@@ -2,7 +2,7 @@
   "groupCode": "GXX",
   "modelVersion": "agrisoko-tfidf-v1",
   "memberCount": 5,
-  "datasetFingerprint": "3dd5318467cfedf5f356d85add582efca00ff1913acefd7be193535da571d2aa",
-  "generatedAt": "2026-10-23T01:09:06+00:00",
+  "datasetFingerprint": "167269e5bf4a885c1157b44511d63c2baf982fa6b3f52a77007d8a54303c8306",
+  "generatedAt": "2026-10-23T01:18:19+00:00",
   "source": "ai-api/data/members.json"
 }

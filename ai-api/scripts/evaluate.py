@@ -23,7 +23,7 @@ from app.config import DEFAULT_THRESHOLD, MODEL_VERSION  # noqa: E402
 from app.data import DatasetError, MemberStore, fingerprint_file  # noqa: E402
 from app.engine import MatchingEngine  # noqa: E402
 
-SWEEP = [0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65]
+SWEEP = [0.30, 0.35, 0.40, 0.45, 0.46, 0.47, 0.48, 0.50, 0.55, 0.60, 0.65]
 
 
 def load_queries(path: Path) -> list[dict[str, Any]]:

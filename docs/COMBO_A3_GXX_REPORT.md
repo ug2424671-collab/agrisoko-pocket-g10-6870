@@ -180,11 +180,12 @@ Full results, the threshold sweep, the confusion matrix, the error table and per
 | Top-1 member accuracy | 1.000 (15/15) |
 | No-match rejection accuracy | 1.000 (5/5) |
 | Errors at threshold 0.45 | 0 |
-| Threshold sweep | 0.30–0.45 all clean; degradation begins at 0.50 |
+| Threshold sweep | Clean up to 0.47; accuracy drops to 0.933 at 0.48 and 0.867 at 0.50 |
 
-The sweep is the justification for 0.45: it is the highest threshold that keeps every deliberate
-no-match question rejected **and** every correct member question answered. Raising it to 0.50 already
-loses a correct answer.
+The sweep justifies 0.45: every threshold from 0.30 to 0.47 keeps all deliberate no-match questions
+rejected **and** every correct member question answered, while 0.48 already loses a correct answer.
+The group kept 0.45 rather than 0.47 so the margin between the lowest correct match (0.473) and the
+threshold is not consumed in one step.
 
 These figures are produced by `ai-api/evaluation/queries.json` against the five approved records in
 `ai-api/data/members.json`, and are reproducible with `python scripts/evaluate.py`. The dataset

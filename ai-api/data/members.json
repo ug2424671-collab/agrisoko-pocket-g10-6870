@@ -3,28 +3,45 @@
     "id": "kiir-deng-kur",
     "fullName": "Kiir Deng Kur",
     "registrationNumber": "2424671",
-    "aliases": ["Kiir", "Deng", "Kur", "Kiir Deng"],
+    "aliases": [
+      "Kiir",
+      "Deng",
+      "Kur",
+      "Kiir Deng"
+    ],
     "githubUsername": "ug2424671-collab",
     "role": "Product and repository lead",
-    "skills": ["product scope", "GitHub workflow", "code review", "technical writing", "integration testing", "issue triage"],
+    "skills": [
+      "product scope",
+      "GitHub workflow",
+      "code review",
+      "technical writing",
+      "integration testing",
+      "issue triage"
+    ],
     "targetUser": "potato cooperative members, employers and innovation partners who attend the AgriSoko demonstration in Musanze",
     "problem": "A demonstration visitor cannot tell which teammate built which part of AgriSoko Pocket, and nothing in the product shows the evidence behind a claim.",
     "contribution": "Defined the product scope and the approved member schema, set up the repository and the issue, branch and pull request workflow, wrote the project README and the UI/UX and AI system report, and integrated the mobile and AI layers before release.",
     "feature": "Product scope, repository workflow and the approved member data contract",
     "outcomeMetric": "Verified after the final build: the repository holds the mobile app, the AI service, the documentation and the evidence folder; the dataset fingerprint is printed by GET /health and GET /model-info.",
     "evidenceLinks": [
-      { "label": "Project README with commands, URLs and hashes", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/README.md", "type": "commit" },
-      { "label": "UI/UX and AI system report source", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/docs/COMBO_A3_GXX_REPORT.md", "type": "commit" },
-      { "label": "Group demo video", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/evidence/README.md", "type": "demo" }
-    ],
-    "testerFeedback": [
       {
-        "category": "lecturer or staff tester",
-        "quote": "The README states the commands and the evidence locations without needing a walkthrough.",
-        "consent": true,
-        "name": null
+        "label": "Project README with commands, URLs and hashes",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/README.md",
+        "type": "commit"
+      },
+      {
+        "label": "UI/UX and AI system report source",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/docs/COMBO_A3_GXX_REPORT.md",
+        "type": "commit"
+      },
+      {
+        "label": "Group demo video",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/evidence/README.md",
+        "type": "demo"
       }
     ],
+    "testerFeedback": [],
     "introductionDraft": "My name is Kiir Deng Kur. I am the product and repository lead of AgriSoko Pocket. I defined what the product must do for a demonstration visitor, agreed the approved member schema, and set up the GitHub workflow of issues, feature branches, pull requests and reviews. I wrote the project README and the UI/UX and AI system report, and I checked that the mobile app and the AI service work together before the v1.0.0 release.",
     "issueUrl": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/issues/1",
     "branchName": "feat/product-scope-and-repo",
@@ -40,28 +57,45 @@
     "id": "menzi-prince-peter",
     "fullName": "Menzi Prince Peter",
     "registrationNumber": "2528149",
-    "aliases": ["Menzi", "Prince", "Oblack", "Menzi Prince"],
+    "aliases": [
+      "Menzi",
+      "Prince",
+      "Oblack",
+      "Menzi Prince"
+    ],
     "githubUsername": "ug2528149-cell",
     "role": "AI and data engineer",
-    "skills": ["Python", "scikit-learn", "TF-IDF", "pandas", "pytest", "model evaluation"],
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "TF-IDF",
+      "pandas",
+      "pytest",
+      "model evaluation"
+    ],
     "targetUser": "visitors who ask a natural-language question and need to know how confident the app is",
     "problem": "A keyword lookup alone returned the wrong member for role and feature questions, and any confidence threshold would have been a guess without a recorded evaluation.",
     "contribution": "Built the deterministic retrieval pipeline: the member document schema, the scikit-learn TF-IDF word and character feature union, cosine ranking, the confidence formula, the alias boost, the no-match guard and the evaluation query suite with its threshold sweep.",
     "feature": "Evidence-grounded member matching engine with a documented confidence threshold",
     "outcomeMetric": "Recorded by scripts/evaluate.py: top-1 member accuracy 12/12 and no-match rejection 5/5 at the configured threshold of 0.45; the sweep shows accuracy falling from 0.45 to 0.50.",
     "evidenceLinks": [
-      { "label": "AI engine source", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/app/engine.py", "type": "commit" },
-      { "label": "Evaluation results and threshold sweep", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/evaluation/RESULTS.md", "type": "commit" },
-      { "label": "Engine test suite", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/tests/test_engine.py", "type": "test" }
-    ],
-    "testerFeedback": [
       {
-        "category": "student tester outside the group",
-        "quote": "The alias question returned the right person and showed which terms matched.",
-        "consent": true,
-        "name": null
+        "label": "AI engine source",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/app/engine.py",
+        "type": "commit"
+      },
+      {
+        "label": "Evaluation results and threshold sweep",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/evaluation/RESULTS.md",
+        "type": "commit"
+      },
+      {
+        "label": "Engine test suite",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/tests/test_engine.py",
+        "type": "test"
       }
     ],
+    "testerFeedback": [],
     "introductionDraft": "My name is Menzi Prince Peter. I am the AI and data engineer of AgriSoko Pocket. I built the matching engine: it turns each approved profile into a searchable document, ranks it with TF-IDF word and character features, adds a documented boost for an exact name or alias, and returns no match when the score is below the confidence threshold of 0.45. I recorded the evaluation queries, the accuracy and the threshold sweep in the repository so the threshold is justified rather than guessed.",
     "issueUrl": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/issues/2",
     "branchName": "feat/ai-tfidf-engine",
@@ -77,28 +111,45 @@
     "id": "uwase-teta-diolinda",
     "fullName": "Uwase Teta Diolinda",
     "registrationNumber": "2526870",
-    "aliases": ["Uwase", "Teta", "Diolinda", "Teta Diolinda"],
+    "aliases": [
+      "Uwase",
+      "Teta",
+      "Diolinda",
+      "Teta Diolinda"
+    ],
     "githubUsername": "TetaDiolinda",
     "role": "API and integration engineer",
-    "skills": ["FastAPI", "Pydantic", "Python", "Uvicorn", "API testing", "JSON schema design"],
+    "skills": [
+      "FastAPI",
+      "Pydantic",
+      "Python",
+      "Uvicorn",
+      "API testing",
+      "JSON schema design"
+    ],
     "targetUser": "the mobile app and any visitor who needs a reliable answer from the matching engine",
     "problem": "The engine needed a stable HTTP contract that never returned unapproved profile fields, and the mobile app needed a clear signal when the service or the dataset was not ready.",
     "contribution": "Built the FastAPI service and its contract: the health, members, member-by-id, ask and model-info endpoints, Pydantic request and response validation, the grounded response assembly, the degraded state for an empty dataset and the CORS and timeout configuration.",
     "feature": "FastAPI service contract with grounding controls and a degraded-mode signal",
     "outcomeMetric": "Recorded by the API test suite: every endpoint returns the documented schema and status code, an unknown member returns 404, an empty query is rejected with 422 and an empty dataset returns 503 on POST /ask.",
     "evidenceLinks": [
-      { "label": "FastAPI application source", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/app/main.py", "type": "commit" },
-      { "label": "API contract tests", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/tests/test_api.py", "type": "test" },
-      { "label": "API reference in the README", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/README.md", "type": "commit" }
-    ],
-    "testerFeedback": [
       {
-        "category": "student tester outside the group",
-        "quote": "An empty question was refused with a readable message instead of sending a request.",
-        "consent": true,
-        "name": null
+        "label": "FastAPI application source",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/app/main.py",
+        "type": "commit"
+      },
+      {
+        "label": "API contract tests",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/ai-api/tests/test_api.py",
+        "type": "test"
+      },
+      {
+        "label": "API reference in the README",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/README.md",
+        "type": "commit"
       }
     ],
+    "testerFeedback": [],
     "introductionDraft": "My name is Uwase Teta Diolinda. I am the API and integration engineer of AgriSoko Pocket. I built the FastAPI service that connects the mobile app to the matching engine. Every response is validated, limited to approved member fields and carries the model version, the confidence and the dataset fingerprint. When the approved dataset is empty the service reports a degraded state instead of returning an invented answer.",
     "issueUrl": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/issues/3",
     "branchName": "feat/fastapi-contract",
@@ -114,28 +165,45 @@
     "id": "shyaka-peter-guy",
     "fullName": "Shyaka Peter Guy",
     "registrationNumber": "252670",
-    "aliases": ["Shyaka", "Peter", "Guy", "Peter Guy"],
+    "aliases": [
+      "Shyaka",
+      "Peter",
+      "Guy",
+      "Peter Guy"
+    ],
     "githubUsername": "peternickson4-max",
     "role": "Mobile UI and navigation engineer",
-    "skills": ["React Native", "Expo", "TypeScript", "React Navigation", "accessibility", "UI components"],
+    "skills": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "React Navigation",
+      "accessibility",
+      "UI components"
+    ],
     "targetUser": "cooperative members and visitors who read team profiles on an Android phone",
     "problem": "Team profiles were hard to reach on a phone, the confidence score was not visible, and the layout broke when the system font size was increased.",
     "contribution": "Built the mobile screens and the typed navigation: the home, ask, result, directory, profile and about screens, plus the reusable cards, chips, confidence meter, source badge, state banner and evidence link list, with accessible labels and large-text handling.",
     "feature": "Profile result screen and typed app navigation",
     "outcomeMetric": "Verified with npm run check and a type check: the navigation parameters are typed, the type check passes with no errors, and the large-text and contrast review issues found on the device were fixed.",
     "evidenceLinks": [
-      { "label": "Navigation and screen sources", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/tree/main/mobile/src/screens", "type": "commit" },
-      { "label": "Reusable UI components", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/tree/main/mobile/src/components", "type": "commit" },
-      { "label": "Confidence and source display", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/mobile/src/components/ConfidenceMeter.tsx", "type": "commit" }
-    ],
-    "testerFeedback": [
       {
-        "category": "student tester outside the group",
-        "quote": "The profile shows the contribution and the evidence links without crowding the screen.",
-        "consent": true,
-        "name": null
+        "label": "Navigation and screen sources",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/tree/main/mobile/src/screens",
+        "type": "commit"
+      },
+      {
+        "label": "Reusable UI components",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/tree/main/mobile/src/components",
+        "type": "commit"
+      },
+      {
+        "label": "Confidence and source display",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/mobile/src/components/ConfidenceMeter.tsx",
+        "type": "commit"
       }
     ],
+    "testerFeedback": [],
     "introductionDraft": "My name is Shyaka Peter Guy. I am the mobile UI and navigation engineer of AgriSoko Pocket. I built the React Native screens that let a visitor ask a question, read the matched profile and follow its evidence links. I used typed navigation parameters, reusable components and accessible labels so the result stays usable on a small Android screen and with large system text.",
     "issueUrl": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/issues/4",
     "branchName": "feat/mobile-screens",
@@ -151,28 +219,44 @@
     "id": "umutoni-liliane",
     "fullName": "Umutoni Liliane",
     "registrationNumber": "2527968",
-    "aliases": ["Umutoni", "Liliane", "Lily"],
+    "aliases": [
+      "Umutoni",
+      "Liliane",
+      "Lily"
+    ],
     "githubUsername": "lilianeumutoni302",
     "role": "Offline, quality and evidence engineer",
-    "skills": ["AsyncStorage", "NetInfo", "device testing", "issue reproduction", "quality assurance", "test documentation"],
+    "skills": [
+      "AsyncStorage",
+      "NetInfo",
+      "device testing",
+      "issue reproduction",
+      "quality assurance",
+      "test documentation"
+    ],
     "targetUser": "visitors in rooms with weak or no network coverage in Musanze",
     "problem": "A network failure used to erase the last useful answer and gave no indication whether a result was live, cached or stored on the phone.",
     "contribution": "Built the offline and cache path: the bundled directory, the AsyncStorage cache, the exact name, alias, role and feature lookup, the live, cached and offline source labels, and the timeout and retry states; also maintained the test log and the tester feedback record.",
     "feature": "Offline exact-name lookup with cache source labels",
     "outcomeMetric": "Verified by the offline and validation check scripts in npm run check: the exact-name, alias, role and feature queries resolve offline, unrelated questions return no match, and a stale source label defect found during testing was fixed.",
     "evidenceLinks": [
-      { "label": "Offline lookup source", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/mobile/src/services/offline.ts", "type": "commit" },
-      { "label": "Cache and source label orchestration", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/mobile/src/context/TeamContext.tsx", "type": "commit" },
-      { "label": "Test log", "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/evidence/TEST_LOG.md", "type": "test" }
-    ],
-    "testerFeedback": [
       {
-        "category": "student tester outside the group",
-        "quote": "In airplane mode the app still found the member and clearly said it was an offline match.",
-        "consent": true,
-        "name": null
+        "label": "Offline lookup source",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/mobile/src/services/offline.ts",
+        "type": "commit"
+      },
+      {
+        "label": "Cache and source label orchestration",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/mobile/src/context/TeamContext.tsx",
+        "type": "commit"
+      },
+      {
+        "label": "Test log",
+        "url": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/blob/main/evidence/TEST_LOG.md",
+        "type": "test"
       }
     ],
+    "testerFeedback": [],
     "introductionDraft": "My name is Umutoni Liliane. I am the offline, quality and evidence engineer of AgriSoko Pocket. I built the offline path: the approved directory is bundled and cached, exact name, alias, role and feature questions are answered without a network, and every result is labelled live, cached or offline. I also reproduced the timeout and stale-cache defects, recorded the test log and kept the tester feedback file honest.",
     "issueUrl": "https://github.com/ug2424671-collab/agrisoko-pocket-gxx/issues/5",
     "branchName": "feat/offline-cache",

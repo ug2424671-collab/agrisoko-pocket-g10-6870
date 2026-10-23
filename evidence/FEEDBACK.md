@@ -11,6 +11,9 @@ state the actual tester group honestly and say so in the report and in the app l
 
 ## Consent record
 
+Record the real tester category. Ask before naming anyone. The rows below must reflect people who
+actually tested the APK.
+
 | # | Tester code | Category | Inside or outside the group | Consent to quote | Consent to be named | Date |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | T1 | | | yes / no | yes / no | |
@@ -53,9 +56,18 @@ category. Do not attribute a quote to a person who did not give it.
 
 State plainly which tester groups were reachable and which were not.
 
+- Group members available as internal testers: Kiir Deng Kur, Menzi Prince Peter, Uwase Teta Diolinda,
+  Shyaka Peter Guy, Umutoni Liliane.
 - Testers available to this group: *(for example: classmates and one lecturer)*
 - Intended users we could not reach: *(for example: a potato cooperative member during the
   submission window)*
 - How this limitation is disclosed: the About screen shows the model and data limitations, and the
   report records this scope note. No cooperative or farmer statement appears anywhere unless a
   consented quote exists in this file.
+
+## Dataset note
+
+The tester feedback stored in `ai-api/data/members.json` currently records the *category* of each
+tester with `"name": null` and `"consent": true`. Replace those entries with the real sessions recorded
+above, or clear them, before submission. Do not leave a quotation in the dataset that no tester
+actually gave.

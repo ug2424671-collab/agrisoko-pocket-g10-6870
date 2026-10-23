@@ -2,9 +2,9 @@
 
 - Model: `agrisoko-tfidf-v1`
 - Dataset: `data/members.json`
-- Dataset SHA-256: `3dd5318467cfedf5f356d85add582efca00ff1913acefd7be193535da571d2aa`
+- Dataset SHA-256: `167269e5bf4a885c1157b44511d63c2baf982fa6b3f52a77007d8a54303c8306`
 - Query file: `evaluation/queries.json`
-- Generated: 2026-10-23T01:08:12+00:00
+- Generated: 2026-10-23T01:18:18+00:00
 - Threshold: **0.45**
 
 ## Summary
@@ -40,6 +40,9 @@ keep every deliberate no-match question rejected.
 | 0.35 | 1.000 | 1.000 | 0 |
 | 0.40 | 1.000 | 1.000 | 0 |
 | 0.45 | 1.000 | 1.000 | 0 |
+| 0.46 | 1.000 | 1.000 | 0 |
+| 0.47 | 1.000 | 1.000 | 0 |
+| 0.48 | 0.933 | 1.000 | 1 |
 | 0.50 | 0.867 | 1.000 | 2 |
 | 0.55 | 0.533 | 1.000 | 7 |
 | 0.60 | 0.333 | 1.000 | 10 |

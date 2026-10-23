@@ -1,8 +1,8 @@
 {
   "modelVersion": "agrisoko-tfidf-v1",
-  "generatedAt": "2026-10-23T01:08:12+00:00",
+  "generatedAt": "2026-10-23T01:18:18+00:00",
   "datasetFile": "data/members.json",
-  "datasetFingerprint": "3dd5318467cfedf5f356d85add582efca00ff1913acefd7be193535da571d2aa",
+  "datasetFingerprint": "167269e5bf4a885c1157b44511d63c2baf982fa6b3f52a77007d8a54303c8306",
   "queriesFile": "evaluation/queries.json",
   "threshold": 0.45,
   "queryCount": 20,
@@ -187,6 +187,117 @@
         }
       },
       "errorCount": 0
+    },
+    {
+      "threshold": 0.46,
+      "queryCount": 20,
+      "memberQueryCount": 15,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 1.0,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 3,
+          "correct": 3,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        }
+      },
+      "errorCount": 0
+    },
+    {
+      "threshold": 0.47,
+      "queryCount": 20,
+      "memberQueryCount": 15,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 1.0,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 3,
+          "correct": 3,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        }
+      },
+      "errorCount": 0
+    },
+    {
+      "threshold": 0.48,
+      "queryCount": 20,
+      "memberQueryCount": 15,
+      "noMatchQueryCount": 5,
+      "top1Accuracy": 0.933,
+      "top1RetrievalAccuracy": 1.0,
+      "noMatchRejectionAccuracy": 1.0,
+      "perKind": {
+        "alias": {
+          "count": 3,
+          "correct": 3,
+          "accuracy": 1.0
+        },
+        "feature": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "name": {
+          "count": 2,
+          "correct": 2,
+          "accuracy": 1.0
+        },
+        "no_match": {
+          "count": 5,
+          "correct": 5,
+          "accuracy": 1.0
+        },
+        "role": {
+          "count": 5,
+          "correct": 4,
+          "accuracy": 0.8
+        }
+      },
+      "errorCount": 1
     },
     {
       "threshold": 0.5,
