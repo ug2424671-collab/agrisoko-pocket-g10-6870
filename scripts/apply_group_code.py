@@ -73,20 +73,40 @@ def iter_files(root: Path):
 
 
 def replacements(code: str, repo_url: str | None) -> list[tuple[str, str]]:
-    """Return ordered (search, replace) pairs, longest placeholders first."""
+    """Return ordered (search, replace) pairs, longest placeholders first.
+
+    The repository *name* is taken from ``repo_url`` when one is supplied, because
+    a GitHub repository name need not match the Android slug: this project's repo
+    is ``agrisoko-pocket-g10-6870`` while its Expo slug is ``agrisoko-pocket-g106870``.
+    Rewriting the slug form into repository URLs produced 404 links, so the two are
+    kept separate.
+    """
     lower = identifier_form(code)
+    repo_name = _repo_name_from(repo_url) or f"agrisoko-pocket-{lower}"
     pairs = [
         (PLACEHOLDER_ORG_URL, (repo_url or PLACEHOLDER_ORG_URL).rstrip("/")),
         ("https://github.com/REPLACE-ORG/", (repo_url or PLACEHOLDER_ORG_URL).rstrip("/")),
         ("REPLACE-ORG", _org_from(repo_url) if repo_url else "REPLACE-ORG"),
         ("AgriSokoPocket_GXX", f"AgriSokoPocket_{code}"),
         ("AgriSokoPocket_Gxx", f"AgriSokoPocket_{code}"),
-        ("agrisoko-pocket-gxx", f"agrisoko-pocket-{lower}"),
+        # URLs keep the real repository name; slugs and package names use the safe form.
+        ("github.com/example/agrisoko-pocket-gxx", f"github.com/example/{repo_name}"),
+        (f"github.com/{_org_from(repo_url)}/agrisoko-pocket-gxx", f"github.com/{_org_from(repo_url)}/{repo_name}"),
+        ('"slug": "agrisoko-pocket-gxx"', f'"slug": "agrisoko-pocket-{lower}"'),
+        ("agrisoko-pocket-gxx", repo_name),
         ("agrisoko.pocket.gxx", f"agrisoko.pocket.{lower}"),
         ("AgriSoko Pocket GXX", f"AgriSoko Pocket {code}"),
         (PLACEHOLDER_CODE, code),
     ]
     return pairs
+
+
+def _repo_name_from(repo_url: str | None) -> str | None:
+    """Return the repository name segment of a GitHub URL, if present."""
+    if not repo_url:
+        return None
+    match = re.search(r"github\.com/[^/]+/([^/?#]+)", repo_url)
+    return match.group(1).rstrip(".git") if match else None
 
 
 def identifier_form(code: str) -> str:

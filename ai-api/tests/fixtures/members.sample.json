@@ -13,8 +13,8 @@
     "feature": "Evidence-grounded member matching engine",
     "outcomeMetric": "Synthetic fixture only: top-1 accuracy 12/12 on the name, role and feature queries; no-match rejection 5/5 at threshold 0.45.",
     "evidenceLinks": [
-      { "label": "AI engine pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/pull/12", "type": "pull_request" },
-      { "label": "Merged engine commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/commit/0000000000000000000000000000000000000000", "type": "commit" },
+      { "label": "AI engine pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/pull/12", "type": "pull_request" },
+      { "label": "Merged engine commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/commit/0000000000000000000000000000000000000000", "type": "commit" },
       { "label": "Group demo at 00:42", "url": "https://example.com/agrisoko-demo#t=42", "type": "demo" }
     ],
     "testerFeedback": [
@@ -26,12 +26,12 @@
       }
     ],
     "introductionDraft": "My name is Aline. I am the AI and data engineer of AgriSoko Pocket. I built the deterministic member-matching engine: it turns each approved profile into a searchable document, ranks it with TF-IDF word and character features, applies a documented alias boost and rejects weak matches below the confidence threshold. The evaluation suite is in the repository and the model details are shown in the app.",
-    "issueUrl": "https://github.com/example/agrisoko-pocket-g106870/issues/3",
+    "issueUrl": "https://github.com/example/agrisoko-pocket-g10-6870/issues/3",
     "branchName": "feat/ai-tfidf-engine",
-    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/12",
-    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/1111111111111111111111111111111111111111",
-    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/2222222222222222222222222222222222222222",
-    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/14",
+    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/12",
+    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/1111111111111111111111111111111111111111",
+    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/2222222222222222222222222222222222222222",
+    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/14",
     "demoVideoUrl": "https://example.com/agrisoko-demo",
     "demoTimestamp": "00:42",
     "personalClipUrl": ""
@@ -50,8 +50,8 @@
     "feature": "Profile result screen and typed app navigation",
     "outcomeMetric": "Synthetic fixture only: 4 of 4 scripted screen-flow checks passed; two large-text layout issues found in review were fixed.",
     "evidenceLinks": [
-      { "label": "Mobile pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/pull/15", "type": "pull_request" },
-      { "label": "Result screen commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/commit/3333333333333333333333333333333333333333", "type": "commit" },
+      { "label": "Mobile pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/pull/15", "type": "pull_request" },
+      { "label": "Result screen commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/commit/3333333333333333333333333333333333333333", "type": "commit" },
       { "label": "Demo at 01:05", "url": "https://example.com/agrisoko-demo#t=65", "type": "demo" }
     ],
     "testerFeedback": [
@@ -63,12 +63,12 @@
       }
     ],
     "introductionDraft": "My name is Eric. I am the mobile UI and navigation engineer of AgriSoko Pocket. I built the React Native screens that let a visitor ask a question, read the matched profile and follow its evidence links. I used typed navigation parameters, reusable components and accessible labels so the result stays usable on a small Android screen and with large text.",
-    "issueUrl": "https://github.com/example/agrisoko-pocket-g106870/issues/5",
+    "issueUrl": "https://github.com/example/agrisoko-pocket-g10-6870/issues/5",
     "branchName": "feat/mobile-screens",
-    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/15",
-    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/4444444444444444444444444444444444444444",
-    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/5555555555555555555555555555555555555555",
-    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/13",
+    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/15",
+    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/4444444444444444444444444444444444444444",
+    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/5555555555555555555555555555555555555555",
+    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/13",
     "demoVideoUrl": "https://example.com/agrisoko-demo",
     "demoTimestamp": "01:05",
     "personalClipUrl": ""
@@ -87,8 +87,8 @@
     "feature": "FastAPI ask endpoint with grounding controls",
     "outcomeMetric": "Synthetic fixture only: 6 API contract tests passed, including empty query, unknown member and no-match behaviour.",
     "evidenceLinks": [
-      { "label": "API pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/pull/13", "type": "pull_request" },
-      { "label": "API contract commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/commit/6666666666666666666666666666666666666666", "type": "commit" },
+      { "label": "API pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/pull/13", "type": "pull_request" },
+      { "label": "API contract commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/commit/6666666666666666666666666666666666666666", "type": "commit" },
       { "label": "Demo at 01:28", "url": "https://example.com/agrisoko-demo#t=88", "type": "demo" }
     ],
     "testerFeedback": [
@@ -100,12 +100,12 @@
       }
     ],
     "introductionDraft": "My name is Claudine. I am the API and integration engineer of AgriSoko Pocket. I built the FastAPI contract that connects the mobile app to the matching engine. Every response is validated, limited to approved member fields and carries the model version, confidence and dataset fingerprint so the app can show where an answer came from.",
-    "issueUrl": "https://github.com/example/agrisoko-pocket-g106870/issues/4",
+    "issueUrl": "https://github.com/example/agrisoko-pocket-g10-6870/issues/4",
     "branchName": "feat/fastapi-contract",
-    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/13",
-    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/7777777777777777777777777777777777777777",
-    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/8888888888888888888888888888888888888888",
-    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/15",
+    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/13",
+    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/7777777777777777777777777777777777777777",
+    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/8888888888888888888888888888888888888888",
+    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/15",
     "demoVideoUrl": "https://example.com/agrisoko-demo",
     "demoTimestamp": "01:28",
     "personalClipUrl": ""
@@ -124,8 +124,8 @@
     "feature": "Offline exact-name lookup with cache source labels",
     "outcomeMetric": "Synthetic fixture only: 3 of 3 offline lookup checks passed in airplane mode; one stale-label defect was reproduced and fixed.",
     "evidenceLinks": [
-      { "label": "Offline pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/pull/16", "type": "pull_request" },
-      { "label": "Offline lookup commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g106870/commit/9999999999999999999999999999999999999999", "type": "commit" },
+      { "label": "Offline pull request (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/pull/16", "type": "pull_request" },
+      { "label": "Offline lookup commit (demo URL)", "url": "https://github.com/example/agrisoko-pocket-g10-6870/commit/9999999999999999999999999999999999999999", "type": "commit" },
       { "label": "Demo at 01:51", "url": "https://example.com/agrisoko-demo#t=111", "type": "demo" }
     ],
     "testerFeedback": [
@@ -137,12 +137,12 @@
       }
     ],
     "introductionDraft": "My name is Samuel. I am the offline and quality engineer of AgriSoko Pocket. I built the offline path: the approved directory is bundled and cached, exact name, alias and role questions are answered without a network, and every result is labelled live, cached or offline. I also reproduced the timeout and stale-cache defects and linked each fix to an issue.",
-    "issueUrl": "https://github.com/example/agrisoko-pocket-g106870/issues/6",
+    "issueUrl": "https://github.com/example/agrisoko-pocket-g10-6870/issues/6",
     "branchName": "feat/offline-cache",
-    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/16",
-    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g106870/commit/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g106870/pull/12",
+    "pullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/16",
+    "reviewedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "mergedCommitUrl": "https://github.com/example/agrisoko-pocket-g10-6870/commit/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "reviewedPullRequestUrl": "https://github.com/example/agrisoko-pocket-g10-6870/pull/12",
     "demoVideoUrl": "https://example.com/agrisoko-demo",
     "demoTimestamp": "01:51",
     "personalClipUrl": ""

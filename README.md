@@ -10,15 +10,15 @@ See [Fill-in checklist](#fill-in-checklist) for the remaining steps.
 | Item | Value |
 | --- | --- |
 | Application name | AgriSoko Pocket G-10-6870 |
-| Repository | `agrisoko-pocket-g106870` |
+| Repository | `agrisoko-pocket-g10-6870` (Expo slug: `agrisoko-pocket-g106870`) |
 | Release APK | `AgriSokoPocket_G-10-6870.apk` |
 | Package name | `rw.ines.agrisoko.pocket.g106870` |
 | Group verification code | `G-10-6870` (shown on Home and About) |
 | Release tag | `v1.0.0` |
 | AI model version | `agrisoko-tfidf-v1` |
 | Confidence threshold | `0.45` |
-| Repository URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g106870` |
-| v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g106870/releases/tag/v1.0.0` |
+| Repository URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870` |
+| v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870/releases/tag/v1.0.0` |
 | Final commit hash | `<paste the commit that matches this ZIP>` |
 | APK path | `build/AgriSokoPocket_G-10-6870.apk` |
 

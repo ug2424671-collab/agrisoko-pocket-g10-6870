@@ -1,6 +1,6 @@
 # COMBO_A3_G-10-6870 - Contribution document
 
-Group code: **G-10-6870** · Repository: `https://github.com/ug2424671-collab/agrisoko-pocket-g106870` ·
+Group code: **G-10-6870** · Repository: `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870` ·
 Release tag: `v1.0.0` · Final commit: `<hash>`
 
 Every member signs the row that describes their own work. A signature confirms that the listed
