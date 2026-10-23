@@ -1,6 +1,6 @@
-# COMBO_A3_GXX - AI tool usage disclosure
+# COMBO_A3_G-10-6870 - AI tool usage disclosure
 
-Group code: **GXX** · Date: `<date>`
+Group code: **G-10-6870** · Date: `<date>`
 
 AI tools may support brainstorming, explanation, debugging or code review. They do not replace
 authorship, testing, truthful profiles, GitHub collaboration or the individual defense. Replace the

@@ -49,7 +49,7 @@ export const API_BASE_URL = fromEnv(process.env.EXPO_PUBLIC_API_BASE_URL, extra.
 
 export const REQUEST_TIMEOUT_MS = envNumber(process.env.EXPO_PUBLIC_REQUEST_TIMEOUT_MS, extra.requestTimeoutMs ?? 8000);
 
-export const GROUP_CODE = fromEnv(process.env.EXPO_PUBLIC_GROUP_CODE, extra.groupCode ?? 'GXX');
+export const GROUP_CODE = fromEnv(process.env.EXPO_PUBLIC_GROUP_CODE, extra.groupCode ?? 'G-10-6870');
 
 export const CONFIDENCE_THRESHOLD = envNumber(
   process.env.EXPO_PUBLIC_CONFIDENCE_THRESHOLD,
@@ -63,7 +63,7 @@ export const APP_VERSION = APP_VERSION_FALLBACK;
 export const MIN_QUERY_LENGTH = 3;
 export const MAX_QUERY_LENGTH = 300;
 
-export const REPOSITORY_URL = 'https://github.com/ug2424671-collab/agrisoko-pocket-gxx';
+export const REPOSITORY_URL = 'https://github.com/ug2424671-collab/agrisoko-pocket-g106870';
 export const RELEASE_URL = `${REPOSITORY_URL}/releases/tag/v1.0.0`;
 export const APK_ASSET_NAME = `AgriSokoPocket_${GROUP_CODE}.apk`;
 

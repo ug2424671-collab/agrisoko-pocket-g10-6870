@@ -15,7 +15,7 @@ DATA_FILE = Path(os.getenv("AGRISOKO_DATA_FILE", str(BASE_DIR / "data" / "member
 ARTIFACTS_DIR = Path(os.getenv("AGRISOKO_ARTIFACTS_DIR", str(BASE_DIR / "artifacts")))
 EVALUATION_FILE = Path(os.getenv("AGRISOKO_EVALUATION_FILE", str(BASE_DIR / "evaluation" / "results.json")))
 
-GROUP_CODE = os.getenv("AGRISOKO_GROUP_CODE", "GXX")
+GROUP_CODE = os.getenv("AGRISOKO_GROUP_CODE", "G-10-6870")
 MODEL_VERSION = "agrisoko-tfidf-v1"
 API_VERSION = "1.0.0"
 DEFAULT_THRESHOLD = float(os.getenv("AGRISOKO_THRESHOLD", "0.45"))

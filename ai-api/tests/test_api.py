@@ -8,7 +8,7 @@ def test_health_contract(client: TestClient) -> None:
     assert response.status_code == 200
     body = response.json()
     assert body["status"] == "ok"
-    assert body["groupCode"] == "GXX"
+    assert body["groupCode"] == "G-10-6870"
     assert body["memberCount"] == 4
     assert len(body["datasetFingerprint"]) == 64
 
@@ -61,7 +61,7 @@ def test_ask_returns_grounded_contract(client: TestClient) -> None:
     assert body["match"]["id"] == "aline-uwase"
     assert body["confidence"] >= body["threshold"]
     assert body["source"] == "live"
-    assert body["groupCode"] == "GXX"
+    assert body["groupCode"] == "G-10-6870"
     assert body["introduction"] == body["match"]["introductionDraft"]
     assert body["evidenceLinks"][0]["url"].startswith("https://")
 

@@ -1,6 +1,6 @@
-# COMBO_A3_GXX - Tester feedback
+# COMBO_A3_G-10-6870 - Tester feedback
 
-Group code: **GXX** · APK under test: `build/AgriSokoPocket_GXX.apk` · Date: `<date>`
+Group code: **G-10-6870** · APK under test: `build/AgriSokoPocket_G-10-6870.apk` · Date: `<date>`
 
 At least four testers, at least two from outside the group. A tester may be a student, a lecturer, a
 cooperative representative or an intended user.

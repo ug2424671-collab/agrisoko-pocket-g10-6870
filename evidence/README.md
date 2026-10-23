@@ -4,8 +4,8 @@ Every file the assignment requires, plus the Markdown source used to produce the
 
 | File | Status | How to produce it |
 | --- | --- | --- |
-| `COMBO_A3_GXX_REPORT.pdf` | **to record/export** | `COMBO_A3_GXX_REPORT.md` converted to PDF, 1-10 pages |
-| `COMBO_A3_GXX_DEMO.mp4` | **to record** | one continuous, unedited MP4, max 3 minutes, see the shot list below |
+| `COMBO_A3_G-10-6870_REPORT.pdf` | **to record/export** | `COMBO_A3_G-10-6870_REPORT.md` converted to PDF, 1-10 pages |
+| `COMBO_A3_G-10-6870_DEMO.mp4` | **to record** | one continuous, unedited MP4, max 3 minutes, see the shot list below |
 | `CONTRIBUTIONS.pdf` | **to complete and sign** | fill `CONTRIBUTIONS.md`, print, sign, export to PDF |
 | `TEST_LOG.pdf` | **to complete** | fill `TEST_LOG.md` from the real runs, export to PDF |
 | `FEEDBACK.pdf` | **to complete** | fill `FEEDBACK.md` with consented tester feedback, export to PDF |

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AgriSoko Pocket GXX",
-    "slug": "agrisoko-pocket-gxx",
+    "name": "AgriSoko Pocket G-10-6870",
+    "slug": "agrisoko-pocket-g106870",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "agrisokopocket",
@@ -18,10 +18,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "rw.ines.agrisoko.pocket.gxx"
+      "bundleIdentifier": "rw.ines.agrisoko.pocket.g106870"
     },
     "android": {
-      "package": "rw.ines.agrisoko.pocket.gxx",
+      "package": "rw.ines.agrisoko.pocket.g106870",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -51,7 +51,7 @@
       "expo-font"
     ],
     "extra": {
-      "groupCode": "GXX",
+      "groupCode": "G-10-6870",
       "apiBaseUrl": "",
       "requestTimeoutMs": 8000,
       "confidenceThreshold": 0.45,

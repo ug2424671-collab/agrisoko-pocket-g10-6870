@@ -1,6 +1,6 @@
-# COMBO_A3_GXX - Contribution document
+# COMBO_A3_G-10-6870 - Contribution document
 
-Group code: **GXX** · Repository: `https://github.com/ug2424671-collab/agrisoko-pocket-gxx` ·
+Group code: **G-10-6870** · Repository: `https://github.com/ug2424671-collab/agrisoko-pocket-g106870` ·
 Release tag: `v1.0.0` · Final commit: `<hash>`
 
 Every member signs the row that describes their own work. A signature confirms that the listed
@@ -34,7 +34,7 @@ GitHub history and the recorded demo. Do not write a link or a timestamp that do
 | AsyncStorage cache and cache source labels | Umutoni Liliane | | | | | | `npm run test:offline` | |
 | NetInfo connectivity, timeout, retry states | Umutoni Liliane | | | | | | device matrix, issue repro | |
 | Bundled directory sync for offline lookup | Umutoni Liliane | | | | | | `scripts/sync_mobile_data.py` | |
-| EAS configuration and APK build | Shyaka Peter Guy | | | | | | `build/AgriSokoPocket_GXX.apk` | |
+| EAS configuration and APK build | Shyaka Peter Guy | | | | | | `build/AgriSokoPocket_G-10-6870.apk` | |
 | Test log, feedback log, report, demo video | Umutoni Liliane | | | | | | `evidence/` | |
 | README, release tag `v1.0.0`, release asset | Kiir Deng Kur | | | | | | release page | |
 | Repository setup, issues, merge policy | Kiir Deng Kur | | | | | | issue list | |

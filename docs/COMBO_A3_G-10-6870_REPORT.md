@@ -1,20 +1,20 @@
-# AgriSoko Pocket GXX — UI/UX and AI System Report
+# AgriSoko Pocket G-10-6870 — UI/UX and AI System Report
 
 **Integrated Mobile and Artificial Intelligence — Group Assignment 3**
 
 | Field | Value |
 | --- | --- |
-| Group code | `GXX` |
-| Application | AgriSoko Pocket GXX |
-| Package | `rw.ines.agrisoko.pocket.gxx` |
-| Repository | `https://github.com/<org>/agrisoko-pocket-gxx` |
+| Group code | `G-10-6870` |
+| Application | AgriSoko Pocket G-10-6870 |
+| Package | `rw.ines.agrisoko.pocket.g106870` |
+| Repository | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870` |
 | Release | `v1.0.0` |
-| APK | `build/AgriSokoPocket_GXX.apk` |
+| APK | `build/AgriSokoPocket_G-10-6870.apk` |
 | AI model | `agrisoko-tfidf-v1` |
 | Confidence threshold | `0.45` |
 | Report date | `<date>` |
 
-> Replace `GXX`, `<org>`, `<date>` and every `<fill in>` with the group's real values before export.
+> Replace `<date>` and every `<fill in>` with the group's real values before export, and delete this note.
 > Do not add a metric, tester name, quotation or link that is not traceable to `evidence/` or the
 > repository.
 
@@ -26,7 +26,7 @@ AgriSoko Pocket is demonstrating its work to potato cooperatives, employers and 
 Musanze. A visitor needs to know, quickly and honestly, **who did what, and what evidence supports
 it**. This project delivers two integrated parts:
 
-- **AgriSoko Pocket GXX** — a React Native (Expo) Android application that answers natural-language
+- **AgriSoko Pocket G-10-6870** — a React Native (Expo) Android application that answers natural-language
   questions about the team, presents a confidence-scored match with the reason for the match, shows an
   evidence-backed professional introduction, and works offline for exact name, nickname, role and
   feature lookup.
@@ -94,7 +94,7 @@ Included in `evidence/` as screenshots at phone resolution: Home, Ask, Result (m
 ## 4. System architecture
 
 ```
-AgriSoko Pocket GXX
+AgriSoko Pocket G-10-6870
 ├── mobile/     React Native + Expo + TypeScript  ──►  Android APK
 │   src/config, context, components, hooks, navigation, screens, services, data
 ├── ai-api/     Python + FastAPI + scikit-learn
@@ -106,7 +106,7 @@ AgriSoko Pocket GXX
 │   tests/                   pytest suite
 ├── docs/       this report
 ├── evidence/   video, contributions, test log, feedback, AI use
-└── build/      AgriSokoPocket_GXX.apk
+└── build/      AgriSokoPocket_G-10-6870.apk
 ```
 
 ### 4.1 Data flow
@@ -253,7 +253,7 @@ recorded in `evidence/CONTRIBUTIONS.pdf`.
 | Offline lookup, labelled | `mobile/src/services/offline.ts`, `mobile/src/context/TeamContext.tsx` |
 | Loading, timeout, retry, server-unavailable | `mobile/src/services/api.ts`, `mobile/src/components/StateBanner.tsx` |
 | About screen with limitations and links | `mobile/src/screens/AboutScreen.tsx` |
-| Standalone Android release | `mobile/eas.json`, `build/AgriSokoPocket_GXX.apk` |
+| Standalone Android release | `mobile/eas.json`, `build/AgriSokoPocket_G-10-6870.apk` |
 | Repository evidence | `evidence/`, GitHub issues, pull requests, `v1.0.0` release |
 
 ## 12. Signatures

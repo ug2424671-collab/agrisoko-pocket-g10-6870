@@ -2,9 +2,9 @@
 
 - Model: `agrisoko-tfidf-v1`
 - Dataset: `data/members.json`
-- Dataset SHA-256: `167269e5bf4a885c1157b44511d63c2baf982fa6b3f52a77007d8a54303c8306`
+- Dataset SHA-256: `c07eb1b51859b769c1099615e113b9adc16e5a77aad91ac1488ba7a5909150d9`
 - Query file: `evaluation/queries.json`
-- Generated: 2026-10-23T01:18:18+00:00
+- Generated: 2026-10-23T01:27:02+00:00
 - Threshold: **0.45**
 
 ## Summary

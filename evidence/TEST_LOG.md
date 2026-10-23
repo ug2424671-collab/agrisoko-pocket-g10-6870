@@ -1,6 +1,6 @@
-# COMBO_A3_GXX - Test log
+# COMBO_A3_G-10-6870 - Test log
 
-Group code: **GXX** · Release: `v1.0.0` · APK: `build/AgriSokoPocket_GXX.apk` ·
+Group code: **G-10-6870** · Release: `v1.0.0` · APK: `build/AgriSokoPocket_G-10-6870.apk` ·
 Commit under test: `<hash>` · Date: `<date>`
 
 Fill this table from real runs. Do not copy expected values: run the commands, paste the output.

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "threshold": 0.45,
-  "notes": "Synthetic fixture queries used by pytest and the engine demo. Replace with the approved COMBO_A3_GXX queries before submitting. Three queries per member and five deliberate no-match queries.",
+  "notes": "Synthetic fixture queries used by pytest and the engine demo. Replace with the approved COMBO_A3_G-10-6870 queries before submitting. Three queries per member and five deliberate no-match queries.",
   "queries": [
     {
       "query": "Tell me about Aline",

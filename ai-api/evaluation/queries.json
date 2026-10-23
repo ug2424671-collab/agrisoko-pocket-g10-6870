@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "threshold": 0.45,
-  "notes": "Approved COMBO_A3_GXX evaluation queries. Three queries per member (name or alias, role, feature) plus five deliberate no-match queries. Every expectedMemberId refers to a real record in ai-api/data/members.json.",
+  "notes": "Approved COMBO_A3_G-10-6870 evaluation queries. Three queries per member (name or alias, role, feature) plus five deliberate no-match queries. Every expectedMemberId refers to a real record in ai-api/data/members.json.",
   "queries": [
     {
       "query": "Tell me about Kiir Deng Kur",

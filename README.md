@@ -1,26 +1,26 @@
-# AgriSoko Pocket GXX
+# AgriSoko Pocket G-10-6870
 
 Integrated Mobile and Artificial Intelligence - Group Assignment 3.
 
-**Group code placeholder: `GXX`. Replace every `GXX` with the lecturer-assigned code, then rename the
-repository, the app name and the APK asset accordingly.**
-`README.md` also lists every place that still needs your group's data: see
-[Fill-in checklist](#fill-in-checklist).
+**Group code `G-10-6870` is final.** The Android package and Expo slug use the hyphen-free form
+`g106870`, because hyphens are not legal in a package name; every human-readable surface shows
+`G-10-6870`.
+See [Fill-in checklist](#fill-in-checklist) for the remaining steps.
 
 | Item | Value |
 | --- | --- |
-| Application name | AgriSoko Pocket GXX |
-| Repository | `agrisoko-pocket-gxx` |
-| Release APK | `AgriSokoPocket_GXX.apk` |
-| Package name | `rw.ines.agrisoko.pocket.gxx` |
-| Group verification code | `GXX` (shown on Home and About) |
+| Application name | AgriSoko Pocket G-10-6870 |
+| Repository | `agrisoko-pocket-g106870` |
+| Release APK | `AgriSokoPocket_G-10-6870.apk` |
+| Package name | `rw.ines.agrisoko.pocket.g106870` |
+| Group verification code | `G-10-6870` (shown on Home and About) |
 | Release tag | `v1.0.0` |
 | AI model version | `agrisoko-tfidf-v1` |
 | Confidence threshold | `0.45` |
-| Repository URL | `https://github.com/ug2424671-collab/agrisoko-pocket-gxx` |
-| v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-gxx/releases/tag/v1.0.0` |
+| Repository URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g106870` |
+| v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g106870/releases/tag/v1.0.0` |
 | Final commit hash | `<paste the commit that matches this ZIP>` |
-| APK path | `build/AgriSokoPocket_GXX.apk` |
+| APK path | `build/AgriSokoPocket_G-10-6870.apk` |
 
 ## The product in one paragraph
 
@@ -52,7 +52,7 @@ reviewed and signed their own record; privacy-restricted data is deliberately ab
 ## Architecture
 
 ```
-AgriSoko Pocket GXX
+AgriSoko Pocket G-10-6870
 ├── mobile/                     React Native + Expo + TypeScript (Android APK)
 │   ├── App.tsx                 providers: safe area, team context, navigation
 │   ├── app.json                app name, package, API base URL, timeout, threshold
@@ -71,9 +71,9 @@ AgriSoko Pocket GXX
 │   ├── scripts/                build_index, validate_data, evaluate, sync_mobile_data
 │   ├── evaluation/             results.json + RESULTS.md
 │   └── tests/                  pytest suite
-├── docs/                       COMBO_A3_GXX_REPORT.pdf and its Markdown source
+├── docs/                       COMBO_A3_G-10-6870_REPORT.pdf and its Markdown source
 ├── evidence/                   demo video, contributions, test log, feedback, AI_USE
-└── build/                      AgriSokoPocket_GXX.apk
+└── build/                      AgriSokoPocket_G-10-6870.apk
 ```
 
 ### How the parts work together
@@ -177,7 +177,7 @@ npx eas-cli init                    # writes the real projectId into app.json
 npx eas-cli build --platform android --profile preview
 ```
 
-Download the resulting APK and place it at `build/AgriSokoPocket_GXX.apk`. Attach the same file to
+Download the resulting APK and place it at `build/AgriSokoPocket_G-10-6870.apk`. Attach the same file to
 the GitHub `v1.0.0` release.
 
 Local alternative with an Android SDK present:
@@ -227,7 +227,7 @@ curl -X POST http://127.0.0.1:8000/ask \
 ```jsonc
 {
   "query": "Who built offline mode?",
-  "groupCode": "GXX",
+  "groupCode": "G-10-6870",
   "modelVersion": "agrisoko-tfidf-v1",
   "threshold": 0.45,
   "datasetFingerprint": "…64 hex characters…",
@@ -259,7 +259,7 @@ of suggestions. The service never invents a biography, metric, link or stakehold
 | Offline exact name, nickname, role and feature lookup, labelled | `src/services/offline.ts`, `src/context/TeamContext.tsx` |
 | Loading, timeout, retry, server-unavailable without losing the last result | `src/services/api.ts`, `src/components/StateBanner.tsx` |
 | About: data source, model approach, limitations, API status, GitHub URL, APK version, code | `src/screens/AboutScreen.tsx` |
-| Standalone Android release | `mobile/eas.json`, `build/AgriSokoPocket_GXX.apk` |
+| Standalone Android release | `mobile/eas.json`, `build/AgriSokoPocket_G-10-6870.apk` |
 
 Engineering notes: typed navigation parameters (`src/navigation/types.ts`), reusable components,
 `accessibilityLabel`/`accessibilityHint` on every interactive control, `maxFontSizeMultiplier` for
@@ -297,7 +297,7 @@ are reproducible with `python scripts/evaluate.py`. Full detail:
 - Every member opens at least one substantial pull request linked to their issue and reviews at least
   one pull request from another member with a substantive comment or requested check.
 - Only tested work is merged into `main`. The assessed state is tagged `v1.0.0` with a GitHub Release
-  carrying `AgriSokoPocket_GXX.apk`.
+  carrying `AgriSokoPocket_G-10-6870.apk`.
 
 Contribution map, per-member issue, branch, pull request, review, merged commit, test and
 demonstration timestamp: [`evidence/CONTRIBUTIONS.pdf`](evidence/README.md).
@@ -320,44 +320,52 @@ demonstration timestamp: [`evidence/CONTRIBUTIONS.pdf`](evidence/README.md).
 | Requirement | Location |
 | --- | --- |
 | README with group code, roles, commands, URLs, hashes | `README.md` |
-| UI UX and AI system report (1-10 pages PDF) | `docs/COMBO_A3_GXX_REPORT.pdf` |
-| Demonstration video (MP4, max 3 minutes) | `evidence/COMBO_A3_GXX_DEMO.mp4` |
+| UI UX and AI system report (1-10 pages PDF) | `docs/COMBO_A3_G-10-6870_REPORT.pdf` |
+| Demonstration video (MP4, max 3 minutes) | `evidence/COMBO_A3_G-10-6870_DEMO.mp4` |
 | Signed contribution document | `evidence/CONTRIBUTIONS.pdf` |
 | Test log (AI queries, API tests, device matrix, testers) | `evidence/TEST_LOG.pdf` |
 | Tester feedback with consent records | `evidence/FEEDBACK.pdf` |
 | AI tool usage disclosure | `evidence/AI_USE.md` |
-| Release APK | `build/AgriSokoPocket_GXX.apk` |
+| Release APK | `build/AgriSokoPocket_G-10-6870.apk` |
 
 ## Fill-in checklist
 
-### One-pass group-code substitution
+The group code is applied. What remains is the external work that cannot be done from a development
+machine: the APK build, the device tests, the demo video, and the GitHub collaboration history.
 
-Run this **first**, before any other step:
+### Already done
+
+- Group code `G-10-6870` applied to the app name, the API configuration, the documentation and the
+  evidence files. The Android package and Expo slug use the hyphen-free form `g106870`.
+- `ai-api/data/members.json` holds the five signed member records.
+- Validation, index build, evaluation, mobile data sync and the test suites all pass.
+
+### Remaining
+
+1. **Create the GitHub repository** at `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870`
+   and push `main`.
+2. **Create the five issues**, one per member, with an owner, acceptance criteria and a module label.
+3. **Open a feature branch and pull request per member**, then have each member review at least one
+   other member's pull request. Fill the empty columns in `evidence/CONTRIBUTIONS.md` from the real
+   history.
+4. **Build the APK**: `bash build/build_apk.sh` (runs `eas init` to fill the EAS `projectId`, then
+   downloads the artefact to `build/AgriSokoPocket_G-10-6870.apk`).
+5. **Install on two Android devices**, walk the state table in `evidence/TEST_LOG.md`, and fill in the
+   device matrix and state coverage rows.
+6. **Run tester sessions** and record them in `evidence/FEEDBACK.md`. Only then add real, consented
+   quotations to the `testerFeedback` field of `ai-api/data/members.json` and re-run
+   `validate_data.py`, `build_index.py`, `evaluate.py` and `sync_mobile_data.py`.
+7. **Record the demonstration video** (maximum 3 minutes) and store it as
+   `evidence/COMBO_A3_G-10-6870_DEMO.mp4`.
+8. **Export the PDFs**: `bash docs/make_pdfs.sh`.
+9. **Tag `v1.0.0`**, publish the release with the APK attached, and paste the final commit hash into
+   the table at the top of this README.
+
+If the repository or the group code ever changes, re-run the substitution:
 
 ```bash
-python3 scripts/apply_group_code.py --group-code G14 \
-  --repo-url https://github.com/<your-org>/agrisoko-pocket-g14
+python3 scripts/apply_group_code.py --group-code G-10-6870 \
+  --repo-url https://github.com/<your-org>/agrisoko-pocket-g10-6870
 ```
 
-It replaces the placeholder `GXX` in the app name, the Android package, the API configuration, the
-documentation and the evidence files, renames files such as `docs/COMBO_A3_GXX_REPORT.md`, and is
-safe to run twice (the second run reports no changes). Use `--dry-run` to preview.
-
-Then:
-
-1. Confirm `mobile/app.json` (`name`, `slug`, `package`, `extra.groupCode`) and
-   `ai-api/app/config.py` (`GROUP_CODE`) show the real code.
-2. Replace the placeholder JSON in `ai-api/data/members.json` with the signed member records, using
-   `ai-api/tests/fixtures/members.sample.json` as the schema template.
-3. Run `python scripts/validate_data.py`, `build_index.py`, `evaluate.py`, `sync_mobile_data.py`
-   inside `ai-api/` (use the `ai-api/.venv` interpreter).
-4. Re-run `npm run check` inside `mobile/`.
-5. Build the APK with `bash build/build_apk.sh`, install it on two Android devices, record the demo,
-   and complete every evidence file.
-6. Regenerate the PDFs with `bash docs/make_pdfs.sh`.
-7. Create the GitHub issues, branches, pull requests and reviews, tag `v1.0.0`, publish the release
-   with the APK, and paste the final commit hash in the table at the top of this README.
-
-The EAS `projectId` and the repository URL are the only remaining placeholders after step 1;
-`scripts/apply_group_code.py` fills the repository URL and `bash build/build_apk.sh` fills the
-`projectId` via `eas init`.
+Use `--dry-run` to preview. The script is idempotent: a second run reports no changes.

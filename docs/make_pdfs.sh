@@ -12,7 +12,7 @@ OUT_DIR="$ROOT/build/pdf"
 mkdir -p "$OUT_DIR"
 
 SOURCES=(
-  "$ROOT/docs/COMBO_A3_GXX_REPORT.md"
+  "$ROOT/docs/COMBO_A3_G-10-6870_REPORT.md"
   "$ROOT/evidence/CONTRIBUTIONS.md"
   "$ROOT/evidence/TEST_LOG.md"
   "$ROOT/evidence/FEEDBACK.md"
@@ -34,7 +34,7 @@ md_to_html() {
 echo "Output directory: $OUT_DIR"
 for src in "${SOURCES[@]}"; do
   case "$src" in
-    */COMBO_A3_GXX_REPORT.md) base="COMBO_A3_GXX_REPORT" ;;
+    */COMBO_A3_G-10-6870_REPORT.md) base="COMBO_A3_G-10-6870_REPORT" ;;
     */CONTRIBUTIONS.md)       base="CONTRIBUTIONS" ;;
     */TEST_LOG.md)            base="TEST_LOG" ;;
     */FEEDBACK.md)            base="FEEDBACK" ;;

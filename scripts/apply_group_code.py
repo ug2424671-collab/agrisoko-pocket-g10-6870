@@ -35,6 +35,11 @@ from pathlib import Path
 PLACEHOLDER_CODE = "GXX"
 PLACEHOLDER_ORG_URL = "https://github.com/REPLACE-ORG/agrisoko-pocket-gxx"
 
+# Android package names, Expo slugs and npm package names only allow lowercase
+# letters, digits and single hyphens or underscores. A lecturer code such as
+# "G-10-6870" is not safe verbatim, so identifiers use a stripped form.
+IDENTIFIER_SAFE_RE = re.compile(r"[^a-z0-9]+")
+
 TEXT_SUFFIXES = {
     ".md", ".py", ".ts", ".tsx", ".js", ".jsx", ".json", ".jsonc",
     ".txt", ".yml", ".yaml", ".toml", ".ini", ".cfg", ".sh", ".env",
@@ -69,7 +74,7 @@ def iter_files(root: Path):
 
 def replacements(code: str, repo_url: str | None) -> list[tuple[str, str]]:
     """Return ordered (search, replace) pairs, longest placeholders first."""
-    lower = code.lower()
+    lower = identifier_form(code)
     pairs = [
         (PLACEHOLDER_ORG_URL, (repo_url or PLACEHOLDER_ORG_URL).rstrip("/")),
         ("https://github.com/REPLACE-ORG/", (repo_url or PLACEHOLDER_ORG_URL).rstrip("/")),
@@ -84,6 +89,14 @@ def replacements(code: str, repo_url: str | None) -> list[tuple[str, str]]:
     return pairs
 
 
+def identifier_form(code: str) -> str:
+    """Return a package/slug-safe lowercase form of a group code.
+
+    ``G-10-6870`` becomes ``g106870`` so it is valid in an Android package name.
+    """
+    return IDENTIFIER_SAFE_RE.sub("", code.lower())
+
+
 def _org_from(repo_url: str | None) -> str:
     """Extract the owner segment from a repository URL, if there is one."""
     if not repo_url:
@@ -94,7 +107,7 @@ def _org_from(repo_url: str | None) -> str:
 
 def rename_paths(root: Path, code: str, dry_run: bool) -> list[tuple[Path, Path]]:
     """Rename files whose names contain the placeholder (deepest path first)."""
-    lower = code.lower()
+    lower = identifier_form(code)
     renamed: list[tuple[Path, Path]] = []
     candidates = [
         path for path in root.rglob("*")
@@ -129,8 +142,17 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     code = args.group_code.strip().upper()
-    if not re.fullmatch(r"[A-Z]{1,3}\d{1,3}", code):
-        print(f"error: '{args.group_code}' does not look like a group code (expected e.g. G14)", file=sys.stderr)
+    # Accept formats such as G14, G-10-6870 or G_4. Reject anything with
+    # characters that cannot appear in a filename or an identifier.
+    if not re.fullmatch(r"[A-Z0-9][A-Z0-9._-]{0,23}", code):
+        print(
+            f"error: '{args.group_code}' is not a usable group code "
+            "(letters, digits, dot, underscore or hyphen, max 24 characters)",
+            file=sys.stderr,
+        )
+        return 2
+    if not identifier_form(code):
+        print(f"error: '{args.group_code}' has no letters or digits to build an identifier from", file=sys.stderr)
         return 2
     if code == PLACEHOLDER_CODE:
         print("error: that is still the placeholder code", file=sys.stderr)
