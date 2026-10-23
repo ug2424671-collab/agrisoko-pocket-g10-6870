@@ -122,7 +122,7 @@ Built on this machine with the Android SDK, JDK 17 and Gradle, without an Expo/E
 | Check | Command | Result |
 | --- | --- | --- |
 | Native project generated | `npx expo prebuild --platform android` | `android/` created, package `rw.ines.agrisoko.pocket.g106870` |
-| Release build | `./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a` | `BUILD SUCCESSFUL in 16m 56s`, 380 actionable tasks (209 executed, 171 up-to-date) |
+| Release build | `./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a` | `BUILD SUCCESSFUL in 16m 56s` for the clean build (209 tasks executed), then `BUILD SUCCESSFUL in 4m 51s` for the rebuild that carries the example-question fix (10 tasks executed, 370 up-to-date) |
 | Artifact name | `build/build_apk_local.sh` | `build/AgriSokoPocket_G-10-6870.apk` |
 | Size | `ls -lh` | 26 MB |
 | Package | `aapt2 dump badging` | `rw.ines.agrisoko.pocket.g106870`, versionCode 1, versionName 1.0.0 |
@@ -131,7 +131,7 @@ Built on this machine with the Android SDK, JDK 17 and Gradle, without an Expo/E
 | ABI packaged | `aapt2 dump badging` | `arm64-v8a` (single ABI for the demo device) |
 | Zip alignment | `zipalign -c -v 4` | aligned |
 | Signature | `apksigner verify --print-certs` | valid; `CN=AgriSoko Pocket G-10-6870, OU=INES, O=AgriSoko Pocket, L=Kigali, C=RW` |
-| SHA-256 | `sha256sum` | `c9cb2ce87234b5a825696ff32da69b136bc4f51bf220968d16f4143359436fbb` |
+| SHA-256 | `sha256sum` | `149bebacda24df7c8dbcb3e2b704cffa162287c489989875674024579ec773db` |
 
 ### What is inside the APK
 
@@ -151,6 +151,8 @@ Built on this machine with the Android SDK, JDK 17 and Gradle, without an Expo/E
 | --- | --- | --- |
 | Missing `babel-preset-expo` | Metro aborted immediately: `Cannot find module 'babel-preset-expo'` | Added the dependency (`260cb3b`) |
 | Gradle daemon killed twice during compilation | 6.6 GB machine; all four ABIs plus parallel workers exhausted RAM and swap | Single ABI, `org.gradle.parallel=false`, `workers.max=1`, `-Xmx2048m`, in-process Kotlin compiler |
+| Incremental rebuild failed on the JS bundle | `createBundleReleaseJsAndAssets` raised `NoSuchFileException: .../index.android.bundle.hbc: The source file doesn't exist`, leaving the previous APK in place | Remove `app/build/generated/assets/createBundleReleaseJsAndAssets` and `app/build/intermediates/assets/release` before rebuilding; the bundle task then re-runs from a clean state |
+| The Ask screen suggested a member who is not in the dataset | The first example read `Tell me about Aline`; Aline exists only in the unit-test fixture, so that suggestion always produced a no-match | The first example is now built from the live directory (`directory[0].aliases[0]`), so it cannot go stale |
 
 ### Still not done
 
@@ -166,6 +168,7 @@ At least two, each linked to a GitHub issue and a fixing commit. Never invent a 
 | 1 | Ambiguous shared alias | Menzi Prince Peter | Ask `Peter` while both records list "Peter" as an alias | The retrieval step had two competing exact identities | One member, or a safe no-match | `e1d43e0` | The bare `Peter` alias was removed; `Peter` now resolves to `shyaka-peter-guy` alone, and `validate_data.py` reports no shared alias |
 | 2 | Offline check tested a hardcoded fixture | Umutoni Liliane | Run `npm run test:offline` after changing the dataset | The check passed even though it never read `members.bundled.json` | The check must fail on a stale bundle | `e1d43e0` | Now runs 23 checks against the real bundle |
 | 3 | The app could not be bundled at all | Shyaka Peter Guy | Run `npx expo export --platform android` on a clean install | Metro failed with `Cannot find module 'babel-preset-expo'` | A production Android bundle is produced | `260cb3b` | `npx expo export` now emits a 2.75 MB Hermes bundle, and the release APK builds |
+| 4 | The Ask screen suggested a member who is not in the dataset | Shyaka Peter Guy | Install the APK, tap the first example question on the Ask screen | `Tell me about Aline` ran against the real dataset and always produced a no-match; Aline exists only in `ai-api/tests/fixtures/members.sample.json` | The first suggestion must name a member who is in the approved dataset | Commit `fix: build the first Ask example from the real directory` | The APK bundle no longer contains the string `Tell me about Aline`, and the first example is now generated from `directory[0].aliases[0]` |
 
 Note on issue 3: `npm run check` had never caught this because it only runs Node scripts and never
 invokes Metro. The defect was found by running a real production bundle, not by a unit test, which is

@@ -21,7 +21,7 @@ See [Fill-in checklist](#fill-in-checklist) for the remaining steps.
 | v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870/releases/tag/v1.0.0` |
 | Final commit hash | `df4d85c` (the commit the `v1.0.0` tag and release point at) |
 | APK path | `build/AgriSokoPocket_G-10-6870.apk` |
-| APK SHA-256 | `c9cb2ce87234b5a825696ff32da69b136bc4f51bf220968d16f4143359436fbb` |
+| APK SHA-256 | `149bebacda24df7c8dbcb3e2b704cffa162287c489989875674024579ec773db` |
 
 ## The product in one paragraph
 
@@ -187,7 +187,7 @@ installs over `adb` but is not a release identity.
 
 Measured on this machine: 16 min 56 s, 26 MB, package `rw.ines.agrisoko.pocket.g106870`, versionName
 `1.0.0`, `minSdk 24`, `targetSdk 35`, SHA-256
-`c9cb2ce87234b5a825696ff32da69b136bc4f51bf220968d16f4143359436fbb`. The full record is in
+`149bebacda24df7c8dbcb3e2b704cffa162287c489989875674024579ec773db`. The full record is in
 `evidence/TEST_LOG.md` section 5.
 
 Attach the same file to the GitHub `v1.0.0` release.

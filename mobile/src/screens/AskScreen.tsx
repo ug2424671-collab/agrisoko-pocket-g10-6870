@@ -25,8 +25,7 @@ import type { RootStackParamList } from '../navigation/types';
 
 type Navigation = NativeStackNavigationProp<RootStackParamList>;
 
-const EXAMPLES = [
-  'Tell me about Aline',
+const BASE_EXAMPLES = [
   'Who is the AI and data engineer?',
   'Who built offline mode?',
   'Who owns the API contract?',
@@ -38,6 +37,11 @@ export function AskScreen() {
   const [query, setQuery] = useState('');
   const [validationMessage, setValidationMessage] = useState<string | null>(null);
   const [history, setHistory] = useState<string[]>([]);
+  // The first suggestion is built from the approved directory, so it can never
+  // name somebody who is not in the dataset.
+  const examples = directory.length
+    ? [`Tell me about ${directory[0].aliases[0] ?? directory[0].fullName}`, ...BASE_EXAMPLES]
+    : BASE_EXAMPLES;
   const [crashGuard, setCrashGuard] = useState<string | null>(null);
 
   useEffect(() => {
@@ -138,7 +142,7 @@ export function AskScreen() {
         <Text style={styles.sectionTitle} maxFontSizeMultiplier={1.6}>
           Example questions
         </Text>
-        {EXAMPLES.map((example) => (
+        {examples.map((example) => (
           <Pressable
             key={example}
             onPress={() => setQuery(example)}

@@ -4,10 +4,10 @@ Every file the assignment requires, plus the Markdown source used to produce the
 
 | File | Status | How to produce it |
 | --- | --- | --- |
-| `COMBO_A3_G-10-6870_REPORT.pdf` | **to record/export** | `COMBO_A3_G-10-6870_REPORT.md` converted to PDF, 1-10 pages |
-| `COMBO_A3_G-10-6870_DEMO.mp4` | **to record** | one continuous, unedited MP4, max 3 minutes, see the shot list below |
+| `COMBO_A3_G-10-6870_REPORT.pdf` | **done** | `COMBO_A3_G-10-6870_REPORT.md` converted to PDF, 10 pages (limit 1-10) |
+| `COMBO_A3_G-10-6870_DEMO.mp4` | **to record** | one continuous, unedited MP4, max 3 minutes, see the shot list below and the exact taps in `DEMO_SCRIPT.md` |
 | `CONTRIBUTIONS.pdf` | **to complete and sign** | fill `CONTRIBUTIONS.md`, print, sign, export to PDF |
-| `TEST_LOG.pdf` | **to complete** | fill `TEST_LOG.md` from the real runs, export to PDF |
+| `TEST_LOG.pdf` | **partly complete** | section 5 (APK build) is real and filled; section 4 (device matrix) is still empty until a phone runs the APK |
 | `FEEDBACK.pdf` | **to complete** | fill `FEEDBACK.md` with consented tester feedback, export to PDF |
 | `AI_USE.md` | **to complete** | name every AI tool, purpose, prompts, affected files, checks |
 
