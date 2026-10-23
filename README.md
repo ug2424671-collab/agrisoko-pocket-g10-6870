@@ -19,8 +19,9 @@ See [Fill-in checklist](#fill-in-checklist) for the remaining steps.
 | Confidence threshold | `0.45` |
 | Repository URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870` |
 | v1.0.0 release URL | `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870/releases/tag/v1.0.0` |
-| Final commit hash | `<paste the commit that matches this ZIP>` |
+| Final commit hash | `df4d85c` (the commit the `v1.0.0` tag and release point at) |
 | APK path | `build/AgriSokoPocket_G-10-6870.apk` |
+| APK SHA-256 | `c9cb2ce87234b5a825696ff32da69b136bc4f51bf220968d16f4143359436fbb` |
 
 ## The product in one paragraph
 
@@ -332,36 +333,38 @@ demonstration timestamp: [`evidence/CONTRIBUTIONS.pdf`](evidence/README.md).
 
 ## Fill-in checklist
 
-The group code is applied. What remains is the external work that cannot be done from a development
-machine: the APK build, the device tests, the demo video, and the GitHub collaboration history.
+Status of the assessment deliverables. Items marked "not done" need a person with hardware or a
+personal GitHub account; they have not been simulated.
 
-### Already done
+### Done
 
 - Group code `G-10-6870` applied to the app name, the API configuration, the documentation and the
   evidence files. The Android package and Expo slug use the hyphen-free form `g106870`.
 - `ai-api/data/members.json` holds the five signed member records.
-- Validation, index build, evaluation, mobile data sync and the test suites all pass.
+- Validation, index build, evaluation, mobile data sync and all test suites pass.
+- Repository created and pushed: `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870`.
+- One issue per member opened, with owner, acceptance criteria and a module label (issues #1-#5).
+- Five feature branches created from `main`: `feat/product-scope-and-repo`,
+  `feat/ai-tfidf-engine`, `feat/fastapi-contract`, `feat/mobile-screens`, `feat/offline-cache`.
+- Release APK built locally, signed with a private release key, verified, and published:
+  `v1.0.0` with `AgriSokoPocket_G-10-6870.apk` attached.
+- Report and evidence PDFs generated with `bash docs/make_pdfs.sh`.
 
 ### Remaining
 
-1. **Create the GitHub repository** at `https://github.com/ug2424671-collab/agrisoko-pocket-g10-6870`
-   and push `main`.
-2. **Create the five issues**, one per member, with an owner, acceptance criteria and a module label.
-3. **Open a feature branch and pull request per member**, then have each member review at least one
-   other member's pull request. Fill the empty columns in `evidence/CONTRIBUTIONS.md` from the real
-   history.
-4. **Build the APK**: `bash build/build_apk.sh` (runs `eas init` to fill the EAS `projectId`, then
-   downloads the artefact to `build/AgriSokoPocket_G-10-6870.apk`).
-5. **Install on two Android devices**, walk the state table in `evidence/TEST_LOG.md`, and fill in the
-   device matrix and state coverage rows.
-6. **Run tester sessions** and record them in `evidence/FEEDBACK.md`. Only then add real, consented
-   quotations to the `testerFeedback` field of `ai-api/data/members.json` and re-run
+1. **Pull requests and reviews.** Each member must commit to their own branch from their own GitHub
+   account, open a pull request and review at least one other member's pull request. The branches are
+   still empty: pushing commits under another member's name would invent history, so this step needs
+   each member to act. The empty columns in `evidence/CONTRIBUTIONS.md` depend on it.
+2. **Device testing.** Install `build/AgriSokoPocket_G-10-6870.apk` on two Android devices and fill the
+   device matrix and state-coverage table in `evidence/TEST_LOG.md` (section 4). No device was
+   available on the build machine, so no row has been filled.
+3. **Tester sessions.** Run them and record consent in `evidence/FEEDBACK.md`. Only then add real,
+   consented quotations to the `testerFeedback` field of `ai-api/data/members.json` and re-run
    `validate_data.py`, `build_index.py`, `evaluate.py` and `sync_mobile_data.py`.
-7. **Record the demonstration video** (maximum 3 minutes) and store it as
+4. **Demonstration video.** Record it (maximum 3 minutes) and store it as
    `evidence/COMBO_A3_G-10-6870_DEMO.mp4`.
-8. **Export the PDFs**: `bash docs/make_pdfs.sh`.
-9. **Tag `v1.0.0`**, publish the release with the APK attached, and paste the final commit hash into
-   the table at the top of this README.
+5. **Re-export the PDFs** after the documents above are final: `bash docs/make_pdfs.sh`.
 
 If the repository or the group code ever changes, re-run the substitution:
 
