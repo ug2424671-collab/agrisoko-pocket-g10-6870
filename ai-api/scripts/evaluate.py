@@ -24,6 +24,15 @@ from app.data import DatasetError, MemberStore, fingerprint_file  # noqa: E402
 from app.engine import MatchingEngine  # noqa: E402
 
 SWEEP = [0.30, 0.35, 0.40, 0.45, 0.46, 0.47, 0.48, 0.50, 0.55, 0.60, 0.65]
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
+def display_path(path: Path) -> str:
+    """Record repository-relative paths so results.json stays portable."""
+    try:
+        return path.resolve().relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return str(path)
 
 
 def load_queries(path: Path) -> list[dict[str, Any]]:
@@ -245,9 +254,9 @@ def main() -> int:
     payload = {
         "modelVersion": MODEL_VERSION,
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "datasetFile": str(args.data),
+        "datasetFile": display_path(args.data),
         "datasetFingerprint": fingerprint,
-        "queriesFile": str(queries_path),
+        "queriesFile": display_path(queries_path),
         "threshold": args.threshold,
         **{key: value for key, value in summary.items() if key != "threshold"},
         "thresholdSweep": sweep_rows,

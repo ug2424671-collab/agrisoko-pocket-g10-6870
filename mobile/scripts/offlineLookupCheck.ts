@@ -8,7 +8,12 @@
  *
  *   npm run test:offline
  */
+import { createHash } from 'node:crypto';
+import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
 import bundled from '../src/data/members.bundled.json';
+import bundledMeta from '../src/data/bundledMeta.json';
 import { lookupOffline, normalizeText } from '../src/services/offline';
 import type { DirectoryMember } from '../src/types';
 
@@ -19,6 +24,45 @@ if (!Array.isArray(MEMBERS) || MEMBERS.length === 0) {
     'src/data/members.bundled.json has no members. Run npm run sync:data after editing ai-api/data/members.json.',
   );
 }
+
+/**
+ * The About screen prints `bundledMeta.datasetFingerprint`. If the bundle was
+ * never re-synced after the dataset changed, that screen shows a fingerprint
+ * that disagrees with the data the app is actually serving. Check it here so a
+ * forgotten `npm run sync:data` fails instead of shipping.
+ */
+const metaChecks: string[] = [];
+let metaFailures = 0;
+
+function checkMeta(label: string, ok: boolean, detail: string) {
+  if (!ok) metaFailures += 1;
+  metaChecks.push(`${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(54)} ${detail}`);
+}
+
+const sourcePath = fileURLToPath(
+  new URL('../../ai-api/data/members.json', import.meta.url).href,
+);
+if (existsSync(sourcePath)) {
+  const digest = createHash('sha256').update(readFileSync(sourcePath)).digest('hex');
+  checkMeta(
+    'bundle fingerprint matches ai-api/data/members.json',
+    digest === bundledMeta.datasetFingerprint,
+    `${bundledMeta.datasetFingerprint.slice(0, 12)}... vs ${digest.slice(0, 12)}...`,
+  );
+} else {
+  metaChecks.push(`SKIP  dataset source not present at ${sourcePath}`);
+}
+
+checkMeta(
+  'bundled member count matches members.bundled.json',
+  bundledMeta.memberCount === MEMBERS.length,
+  `${bundledMeta.memberCount} vs ${MEMBERS.length}`,
+);
+checkMeta(
+  'bundled group code is the real code',
+  /^G-\d{2}-\d{4}$/.test(bundledMeta.groupCode),
+  bundledMeta.groupCode,
+);
 
 const byId = new Map(MEMBERS.map((member) => [member.id, member]));
 
@@ -61,8 +105,10 @@ CASES.push(
 const lines: string[] = [
   `Offline lookup checks (bundle: ${MEMBERS.length} real members)`,
   '',
+  ...metaChecks,
+  '',
 ];
-let failures = 0;
+let failures = metaFailures;
 
 for (const testCase of CASES) {
   const result = lookupOffline(testCase.query, MEMBERS);
