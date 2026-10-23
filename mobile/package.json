@@ -6,14 +6,15 @@
   "scripts": {
     "start": "expo start",
     "start:clear": "expo start --clear",
-    "android": "expo start --android",
+    "android": "expo run:android",
     "typecheck": "tsc --noEmit",
     "test:offline": "node --conditions=node --import tsx scripts/offlineLookupCheck.ts",
     "test:validation": "node --conditions=node --import tsx scripts/validationCheck.ts",
     "check": "npm run typecheck && npm run test:offline && npm run test:validation",
     "sync:data": "python3 ../ai-api/scripts/sync_mobile_data.py",
     "build:apk": "eas build --platform android --profile preview",
-    "build:apk:local": "eas build --platform android --profile preview --local"
+    "build:apk:local": "eas build --platform android --profile preview --local",
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
@@ -22,6 +23,7 @@
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/native": "^7.1.8",
     "@react-navigation/native-stack": "^7.3.16",
+    "babel-preset-expo": "~54.0.10",
     "expo": "~54.0.0",
     "expo-build-properties": "~1.0.9",
     "expo-constants": "~18.0.8",
